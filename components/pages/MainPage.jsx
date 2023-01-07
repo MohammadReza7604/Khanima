@@ -4,6 +4,8 @@ import { HeaderNavbar } from "../surfaces/HeaderNavbar";
 import { AppBarBanner } from "../surfaces/AppBarBanner";
 import { ModelListCardAdsPage } from "../surfaces/ModelListCardAdsPage";
 import { AdsPage } from "./AdsPage";
+import { SingleProductPage } from "./SingleProductPage";
+import { AddAdPage } from "./AddAdPage";
 
 export const MainPage = () => {
   return (
@@ -12,11 +14,11 @@ export const MainPage = () => {
         <Box>
           <HeaderNavbar />
         </Box>
-        <Box sx={{ marginTop: "72px" }}>
+        {/* <Box sx={{ marginTop: "72px" }}>
           <AppBarBanner />
-        </Box>
+        </Box> */}
         <Box>
-          <AdsPage />
+          <AddAdPage />
         </Box>
       </Stack>
     </>

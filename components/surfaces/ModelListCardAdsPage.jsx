@@ -58,7 +58,7 @@ export const ModelListCardAdsPage = () => {
       </Button>
       <Stack width="100%" direction="row">
         <Box padding="16px">
-          <Image width="177" height="177" src="/images/card.png" />
+          <Image width="177" height="177" src="/images/card.png" alt="photo" />
         </Box>
         <Stack
           width="609px"

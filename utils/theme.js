@@ -1,9 +1,13 @@
 import { createTheme } from "@mui/material";
 import { faIR } from "@mui/material/locale";
+const { palette } = createTheme();
+const { augmentColor } = palette;
 
+const createColor = (mainColor) => augmentColor({ color: { main: mainColor } });
 const theme = createTheme({
   direction: "rtl",
   palette: {
+    sefid: createColor("#ffffff"),
     common: {},
     primary: {
       main: "#00A693",
@@ -51,6 +55,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           fontFamily: "yekan",
+          color: "white",
         },
       },
     },
@@ -58,6 +63,16 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           fontFamily: "yekan",
+        },
+      },
+    },
+    MuiButtonBase: {
+      styleOverrides: {
+        root: {
+          fontFamily: "yekan",
+          fontSize: "14px",
+          color: "#00A693",
+          fontWeight: 400,
         },
       },
     },

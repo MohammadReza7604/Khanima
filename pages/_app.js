@@ -1,17 +1,13 @@
-import { CacheProvider } from "@emotion/react";
 import { ThemeProvider } from "@mui/material";
 import { Footer } from "../components/surfaces/Footer";
-import "../styles/globals.css";
-import { cacheRtl } from "../utils/cacheRtl";
 import theme from "../utils/theme";
+import "../styles/globals.css";
 
 export default function App({ Component, pageProps }) {
   return (
-    <CacheProvider value={cacheRtl}>
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-        <Footer />
-      </ThemeProvider>
-    </CacheProvider>
+    <ThemeProvider theme={theme}>
+      <Component {...pageProps} />
+      <Footer />
+    </ThemeProvider>
   );
 }

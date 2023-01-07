@@ -80,7 +80,7 @@ export const CardBoxAdsPage = () => {
       </Button>
       <Stack width="100%" direction="row">
         <Box padding="16px">
-          <Image width="122" height="122" src="/images/card.png" />
+          <Image width="122" height="122" src="/images/card.png" alt="photo" />
         </Box>
         <Stack
           width="609px"
