@@ -6,6 +6,7 @@ import { ModelListCardAdsPage } from "../surfaces/ModelListCardAdsPage";
 import { AdsPage } from "./AdsPage";
 import { SingleProductPage } from "./SingleProductPage";
 import { AddAdPage } from "./AddAdPage";
+import { AddAdAnotherVersionPage } from "./AddAdAnotherVersionPage";
 
 export const MainPage = () => {
   return (
@@ -18,7 +19,7 @@ export const MainPage = () => {
           <AppBarBanner />
         </Box> */}
         <Box>
-          <AddAdPage />
+          <AddAdAnotherVersionPage />
         </Box>
       </Stack>
     </>
