@@ -110,9 +110,9 @@ export const AddAdAnotherVersionPage = () => {
           />
         </Grid>
         <Grid container xs={6}>
-          <Grid container direction="column">
+          <Grid container direction="column" gap="20px">
             <Box>
-              <Typography variant="h3" fontSize="16px" fontWeight={400}>
+              <Typography variant="h3" fontSize="18px" fontWeight={400}>
                 عکس آگهی
               </Typography>
             </Box>
