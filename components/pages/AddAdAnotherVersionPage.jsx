@@ -144,7 +144,7 @@ export const AddAdAnotherVersionPage = () => {
             </Grid>
           </Grid>
           <Grid container justifyContent="center">
-            <Button variant="contained" width="172px" height="50px">
+            <Button variant="contained" sx={{ width: "172px", height: "50px" }}>
               ثبت آگهی
             </Button>
           </Grid>

@@ -7,7 +7,7 @@ import { AdsPage } from "./AdsPage";
 import { SingleProductPage } from "./SingleProductPage";
 import { AddAdPage } from "./AddAdPage";
 import { AddAdAnotherVersionPage } from "./AddAdAnotherVersionPage";
-import { BookmarksPage } from "./BookmarksPage";
+import { ShopListPage } from "./ShopListPage";
 
 export const MainPage = () => {
   return (
@@ -20,7 +20,7 @@ export const MainPage = () => {
           <AppBarBanner />
         </Box> */}
         <Box>
-          <BookmarksPage />
+          <ShopListPage />
         </Box>
       </Stack>
     </>
