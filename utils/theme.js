@@ -76,6 +76,15 @@ const theme = createTheme({
         },
       },
     },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          fontFamily: "yekan",
+          fontSize: "22px",
+          fontWeight: 600,
+        },
+      },
+    },
   },
   faIR: {},
 });

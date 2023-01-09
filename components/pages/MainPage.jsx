@@ -9,6 +9,7 @@ import { AddAdPage } from "./AddAdPage";
 import { AddAdAnotherVersionPage } from "./AddAdAnotherVersionPage";
 import { ShopListPage } from "./ShopListPage";
 import { MyAdsPage } from "./MyAdsPage";
+import { SellerPage } from "./SellerPage";
 
 export const MainPage = () => {
   return (
@@ -21,7 +22,7 @@ export const MainPage = () => {
           <AppBarBanner />
         </Box> */}
         <Box>
-          <MyAdsPage />
+          <SellerPage />
         </Box>
       </Stack>
     </>
