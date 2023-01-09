@@ -3,6 +3,7 @@ import {
   Box,
   Button,
   Card,
+  Grid,
   IconButton,
   Stack,
   styled,
@@ -13,8 +14,15 @@ import Image from "next/image";
 import SellIcon from "@mui/icons-material/Sell";
 import TurnedInNotIcon from "@mui/icons-material/TurnedInNot";
 import DateRangeOutlinedIcon from "@mui/icons-material/DateRangeOutlined";
+import CreateIcon from "@mui/icons-material/Create";
+import DeleteIcon from "@mui/icons-material/Delete";
 
-export const ModelListCardAdsPage = () => {
+export const MyAdsBox = () => {
+  const CustomIconButton = styled(IconButton)({
+    "&:hover": {
+      backgroundColor: "white",
+    },
+  });
   return (
     <Card
       id="card"
@@ -29,7 +37,7 @@ export const ModelListCardAdsPage = () => {
         alignItems: "center",
       }}
     >
-      <IconButton
+      <CustomIconButton
         sx={{
           width: "20px",
           height: "20px",
@@ -39,23 +47,50 @@ export const ModelListCardAdsPage = () => {
         }}
       >
         <TurnedInNotIcon sx={{ width: "20px", height: "20px" }} />
-      </IconButton>
-      <Button
-        variant="contained"
-        sx={{
-          width: "124px",
-          height: "42px",
-          fontSize: "14px",
-          fontWeight: 500,
-          borderRadius: "10px 0",
-          padding: "5px",
-          position: "absolute",
-          bottom: "0",
-          right: "0",
-        }}
+      </CustomIconButton>
+      <Grid
+        container
+        direction="row"
+        gap="20px"
+        position="absolute"
+        bottom="0"
+        left="0"
+        justifyContent="end"
       >
-        مشاهده بیشتر
-      </Button>
+        <CustomIconButton>
+          <DeleteIcon />
+        </CustomIconButton>
+        <CustomIconButton>
+          <CreateIcon />
+        </CustomIconButton>
+        <Button
+          variant="contained"
+          sx={{
+            width: "124px",
+            height: "42px",
+            fontSize: "14px",
+            fontWeight: 500,
+            borderRadius: "10px 10px 0 0",
+            padding: "5px",
+          }}
+        >
+          ارتقاء آگهی
+        </Button>
+        <Button
+          variant="contained"
+          sx={{
+            width: "124px",
+            height: "42px",
+            fontSize: "14px",
+            fontWeight: 500,
+            borderRadius: "10px 0",
+            padding: "5px",
+          }}
+        >
+          مشاهده آگهی
+        </Button>
+      </Grid>
+
       <Stack width="100%" direction="row">
         <Box padding="16px">
           <Image width="177" height="177" src="/images/card.png" alt="photo" />
