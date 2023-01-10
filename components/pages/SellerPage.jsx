@@ -90,7 +90,7 @@ export const SellerPage = () => {
           <Grid container>
             <Image
               width={240}
-              height={200}
+              height={220}
               alt="seller-photo"
               src="/images/giay01.jpg"
               style={{ borderRadius: "15px" }}
@@ -98,7 +98,7 @@ export const SellerPage = () => {
           </Grid>
           <Grid
             container
-            width="auto"
+            width="240px"
             height="60px"
             borderRadius="5px"
             bgcolor="#00A693"
@@ -263,18 +263,22 @@ export const SellerPage = () => {
                   </Grid>
                   <Grid container xs={2}>
                     <IconTitle
+                      dir="rtl"
                       title="0922 056 2339"
                       icon={<LocalPhoneIcon sx={{ color: "#00A693" }} />}
                     />
                     <IconTitle
+                      dir="rtl"
                       title="026 - 34605896"
                       icon={<LocalPhoneIcon sx={{ color: "#00A693" }} />}
                     />
                     <IconTitle
+                      dir="rtl"
                       title="Khanima"
                       icon={<InstagramIcon sx={{ color: "#00A693" }} />}
                     />
                     <IconTitle
+                      dir="rtl"
                       title="Khanima"
                       icon={<TelegramIcon sx={{ color: "#00A693" }} />}
                     />

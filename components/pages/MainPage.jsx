@@ -10,6 +10,10 @@ import { AddAdAnotherVersionPage } from "./AddAdAnotherVersionPage";
 import { ShopListPage } from "./ShopListPage";
 import { MyAdsPage } from "./MyAdsPage";
 import { SellerPage } from "./SellerPage";
+import { ExpertSinglePage } from "./ExpertSinglePage";
+import { SellerTermsPage } from "./SellerTermsPage";
+import { SuggestPage } from "./SuggestPage";
+import { TermsConditions } from "./TermsConditions";
 
 export const MainPage = () => {
   return (
@@ -22,7 +26,7 @@ export const MainPage = () => {
           <AppBarBanner />
         </Box> */}
         <Box>
-          <SellerPage />
+          <TermsConditions />
         </Box>
       </Stack>
     </>
