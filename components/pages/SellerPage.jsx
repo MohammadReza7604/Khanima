@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Button,
   Divider,
+  FormControl,
   Grid,
+  InputLabel,
+  MenuItem,
+  Select,
   styled,
   Tab,
   Tabs,
@@ -17,45 +21,14 @@ import ReportIcon from "@mui/icons-material/Report";
 import ShareIcon from "@mui/icons-material/Share";
 import { StatisticsNumber } from "../surfaces/StatisticsNumber";
 import { CustomBox } from "../layout/CustomBox";
-import PropTypes from "prop-types";
 import { BoxItemsCarousel } from "../layout/BoxItemesCarousel";
 import { IconTitle } from "../data-display/IconTitle";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from "@mui/icons-material/Telegram";
-
-const TabPanel = (props) => {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`full-width-tabpanel-${index}`}
-      aria-labelledby={`full-width-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ p: 1 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-};
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
-};
-
-function a11yProps(index) {
-  return {
-    id: `full-width-tab-${index}`,
-    "aria-controls": `full-width-tabpanel-${index}`,
-  };
-}
+import { TabPanel } from "../navigation/TabPanel";
+import AddIcon from "@mui/icons-material/Add";
+import { CommentBox } from "../surfaces/CommentBox";
 
 export const SellerPage = () => {
   const Text = styled(Typography)({
@@ -97,7 +70,7 @@ export const SellerPage = () => {
       color: "white",
     },
   });
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -125,13 +98,12 @@ export const SellerPage = () => {
           </Grid>
           <Grid
             container
-            width="240px"
+            width="auto"
             height="60px"
             borderRadius="5px"
             bgcolor="#00A693"
             padding="5px"
             direction="row"
-            // margin="0 auto"
             justifyContent="center"
           >
             <CustomGrid>
@@ -197,7 +169,7 @@ export const SellerPage = () => {
       </Grid>
       <Grid container>
         <CustomBox width="100%" height="auto">
-          <Grid container justifyContent="center">
+          <Grid container justifyContent="center" direction="column">
             <Grid>
               <Box sx={{ width: "100%" }}>
                 <Tabs
@@ -326,7 +298,77 @@ export const SellerPage = () => {
               </Grid>
             </TabPanel>
             <TabPanel value={value} index={2}>
-              Item Three
+              <Grid container gap="50px" width="995px" margin="0 auto">
+                <Grid container justifyContent="space-between">
+                  <FormControl sx={{ width: "264px", height: "40px" }}>
+                    <InputLabel id="ad-type">دسته‌بندی</InputLabel>
+                    <Select
+                      labelId="ad-type"
+                      id="ad-type"
+                      // value={value}
+                      label="دسته‌بندی"
+                      onChange={handleChange}
+                      sx={{
+                        border: "1px solid white",
+                        "& .MuiSelect-icon": {
+                          color: "#00A695",
+                        },
+                      }}
+                    >
+                      <MenuItem value="">
+                        <em>None</em>
+                      </MenuItem>
+                      <MenuItem value={10}>Ten</MenuItem>
+                      <MenuItem value={20}>Twenty</MenuItem>
+                      <MenuItem value={30}>Thirty</MenuItem>
+                    </Select>
+                  </FormControl>
+                  <Button
+                    variant="contained"
+                    size="large"
+                    startIcon={<AddIcon sx={{ color: "white" }} />}
+                  >
+                    ثبت نظر
+                  </Button>
+                </Grid>
+                <Grid
+                  container
+                  sx={{ gap: "24" }}
+                  direction="column"
+                  alignItems="center"
+                >
+                  <CommentBox
+                    src="/images/app-bar-banner-pic.jpg"
+                    username="مرتضی شیرین زاده"
+                    time="پنج دقیقه پیش"
+                    commentText="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، "
+                  />
+                  <CommentBox
+                    src="/images/app-bar-banner-pic.jpg"
+                    username="مرتضی شیرین زاده"
+                    time="پنج دقیقه پیش"
+                    commentText="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، "
+                  />
+                  <CommentBox
+                    src="/images/app-bar-banner-pic.jpg"
+                    username="مرتضی شیرین زاده"
+                    time="پنج دقیقه پیش"
+                    commentText="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، "
+                  />
+                  <CommentBox
+                    src="/images/app-bar-banner-pic.jpg"
+                    username="مرتضی شیرین زاده"
+                    time="پنج دقیقه پیش"
+                    commentText="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، "
+                  />
+                  <CommentBox
+                    src="/images/app-bar-banner-pic.jpg"
+                    username="مرتضی شیرین زاده"
+                    time="پنج دقیقه پیش"
+                    commentText="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، "
+                  />
+                </Grid>
+              </Grid>
             </TabPanel>
           </Grid>
         </CustomBox>
