@@ -3,6 +3,8 @@ import { AppBar, Box, Button, Grid, Link, Stack, styled } from "@mui/material";
 import BookmarkOutlinedIcon from "@mui/icons-material/BookmarkOutlined";
 import ChatBubbleRoundedIcon from "@mui/icons-material/ChatBubbleRounded";
 import { LinkNavbar } from "./LinkNavbar";
+import { LoginDialog } from "../feedback/LoginDialog";
+import { RegisterDialog } from "../feedback/RegisterDialog";
 
 export const HeaderNavbar = () => {
   const NavButtons = styled(Button)({
@@ -69,6 +71,8 @@ export const HeaderNavbar = () => {
           </Stack>
         </Stack>
       </Box>
+      {/* <LoginDialog /> */}
+      {/* <RegisterDialog /> */}
     </AppBar>
   );
 };

@@ -1,13 +1,14 @@
-.keen_slider {
+.keen_slider[class^="number_slide"],
+.keen_slider[class*=" number_slide"] {
   background: grey;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 50px;
+  font-size: 30px;
   color: #fff;
   font-weight: 500;
   height: 200px;
-  max-height: 100vh;
+  /* max-height: 400px; */
 }
 
 .number_slide1 {
@@ -72,11 +73,25 @@
 .thumbnail .keen_slider__slide {
   font-size: 30px;
   margin-top: 10px;
-  height: 300px;
+  height: auto;
 }
 .thumbnail .keen_slider__slide {
   cursor: pointer;
 }
 .thumbnail .keen_slider__slide.active {
   border: 2px dashed black;
+}
+.mySwiper {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+.mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
 }

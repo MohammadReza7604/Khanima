@@ -7,9 +7,10 @@ export const CustomBox = (props) => {
       width={props.width}
       height={props.height}
       sx={{
-        border: "3px solid #00A693",
+        border: "4px solid #00A693",
         borderRadius: "10px",
         padding: "14px",
+        ...props.style,
       }}
     >
       {props.children}

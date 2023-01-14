@@ -85,7 +85,33 @@ const theme = createTheme({
         },
       },
     },
+    MuiInputBase: {
+      styleOverrides: {
+        input: {
+          "&::placeholder": {
+            color: "white",
+          },
+        },
+        root: {
+          fontFamily: "yekan",
+          fontSize: "14px",
+          fontWeight: 500,
+        },
+      },
+    },
+    MuiDialogTitle: {
+      styleOverrides: {
+        root: {
+          fontFamily: "yekan",
+          fontSize: "18px",
+          fontWeight: 700,
+          color: "#282828",
+          textAlign: "center",
+        },
+      },
+    },
   },
+
   faIR: {},
 });
 export default theme;

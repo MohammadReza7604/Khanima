@@ -14,6 +14,11 @@ import { ExpertSinglePage } from "./ExpertSinglePage";
 import { SellerTermsPage } from "./SellerTermsPage";
 import { SuggestPage } from "./SuggestPage";
 import { TermsConditions } from "./TermsConditions";
+import { ChatPage } from "./ChatPage";
+import { AboutUs } from "./AboutUs";
+import { SupportPage } from "./SupportPage";
+import { AddFriendsPage } from "./AddFriendsPage";
+import { AddSellerPage } from "./AddSellerPage";
 
 export const MainPage = () => {
   return (
@@ -26,7 +31,7 @@ export const MainPage = () => {
           <AppBarBanner />
         </Box> */}
         <Box>
-          <TermsConditions />
+          <AddSellerPage />
         </Box>
       </Stack>
     </>

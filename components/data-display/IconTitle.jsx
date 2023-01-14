@@ -20,3 +20,13 @@ export const IconTitle2 = (props) => {
     </Grid>
   );
 };
+export const IconTitleChat = (props) => {
+  return (
+    <Grid container direction="row" gap="5px" alignItems="center">
+      <Box display="flex" alignItems="center">
+        {props.icon}
+      </Box>
+      <Typography sx={props.sx}>{props.title}</Typography>
+    </Grid>
+  );
+};

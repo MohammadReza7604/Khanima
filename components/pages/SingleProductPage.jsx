@@ -19,9 +19,6 @@ import ReportIcon from "@mui/icons-material/Report";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import ShareIcon from "@mui/icons-material/Share";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/thumbs";
 import ProductImagesSlider from "../product-images-slider/ProductImagesSlider";
 
 export const SingleProductPage = () => {
@@ -57,7 +54,7 @@ export const SingleProductPage = () => {
     <Box
       sx={{ maxWidth: "1440px", margin: "0 auto", padding: "30px 0 40px 0" }}
     >
-      <Grid container direction="row" xs={12}>
+      <Grid container direction="row" xs={12} marginTop="100px">
         <Grid container direction="row" gap="26px" xs={6}>
           <Typography sx={{ fontSize: "14px", fontWeight: 400 }}>
             خانه {">"} لوازم موسیقی
@@ -242,7 +239,7 @@ export const SingleProductPage = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid container xs={6} height="200px">
+        <Grid container xs={6} height="100px">
           <ProductImagesSlider />
         </Grid>
       </Grid>
