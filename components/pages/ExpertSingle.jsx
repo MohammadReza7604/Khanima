@@ -19,7 +19,7 @@ import { CustomBox } from "../layout/CustomBox";
 
 import { TabPanel } from "../navigation/TabPanel";
 
-export const ExpertSinglePage = () => {
+export const ExpertSingle = () => {
   const Text = styled(Typography)({
     fontSize: "14px",
     fontWeight: 700,

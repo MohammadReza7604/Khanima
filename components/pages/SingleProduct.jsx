@@ -21,7 +21,7 @@ import ShareIcon from "@mui/icons-material/Share";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import ProductImagesSlider from "../product-images-slider/ProductImagesSlider";
 
-export const SingleProductPage = () => {
+export const SingleProduct = () => {
   const CustomTypo = styled(Typography)({
     fontSize: "18px",
     fontWeight: 700,

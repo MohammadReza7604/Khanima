@@ -8,7 +8,7 @@ import { ChatNavbar } from "../surfaces/ChatNavbar";
 import { MessageBoxBlue } from "../surfaces/MessageBoxBlue";
 import { MessageBoxWhite } from "../surfaces/MessageBoxWhite";
 
-export const ChatPage = () => {
+export const Chat = () => {
   const CustomTab = styled(Tab)({
     color: "white",
     marginRight: "10px",

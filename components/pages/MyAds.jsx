@@ -3,7 +3,7 @@ import React from "react";
 import { ModelListCardAdsPage } from "../surfaces/ModelListCardAdsPage";
 import { MyAdsBox } from "../surfaces/MyAdsBox";
 
-export const MyAdsPage = () => {
+export const MyAds = () => {
   return (
     <Grid
       container

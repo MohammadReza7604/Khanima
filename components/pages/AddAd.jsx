@@ -2,7 +2,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import { AddAdPageBox } from "../surfaces/AddAdPageBox";
 
-export const AddAdPage = () => {
+export const AddAd = () => {
   return (
     <Box sx={{ maxWidth: "999px", margin: "0 auto", padding: "30px 0 40px 0" }}>
       <Grid

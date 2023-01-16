@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 
-export const SuggestPage = () => {
+export const Suggest = () => {
   const CustomTextField = styled(TextField)({
     "& label.Mui-focused": {
       color: "white",

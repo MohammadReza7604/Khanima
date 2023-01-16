@@ -30,7 +30,7 @@ import { TabPanel } from "../navigation/TabPanel";
 import AddIcon from "@mui/icons-material/Add";
 import { CommentBox } from "../surfaces/CommentBox";
 
-export const SellerPage = () => {
+export const Seller = () => {
   const Text = styled(Typography)({
     fontSize: "14px",
     fontWeight: 700,

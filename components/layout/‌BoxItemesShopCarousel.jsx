@@ -9,10 +9,9 @@ import {
 } from "@mui/material";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import Image from "next/image";
-import SellIcon from "@mui/icons-material/Sell";
+import LocationOnRoundedIcon from "@mui/icons-material/LocationOnRounded";
 
-export const BoxItemsCarousel = (props) => {
-  let off = props.off;
+export const BoxItemsShopCarousel = () => {
   const Text = styled(Typography)({
     fontSize: "10px",
     fontWeight: 500,
@@ -43,28 +42,6 @@ export const BoxItemsCarousel = (props) => {
           sx={{ width: "20px", height: "20px", color: "black" }}
         />
       </IconButton>
-      {off && (
-        <Box
-          sx={{
-            width: "32px",
-            height: "20px",
-            position: "absolute",
-            top: "10px",
-            right: "14px",
-            backgroundColor: "#282828",
-            borderRadius: "0px 5px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Typography
-            sx={{ color: "#FFC700", fontSize: "10px", fontWeight: 700 }}
-          >
-            25%
-          </Typography>
-        </Box>
-      )}
       <Box>
         <Image
           width="185"
@@ -90,34 +67,23 @@ export const BoxItemsCarousel = (props) => {
         </Box>
       </Box>
 
-      <Typography
-        variant="h4"
-        width="128px"
-        height="28px"
-        fontSize="12px"
-        fontWeight={600}
-        color="black"
-      >
-        گرامافون قاجاری 200 ساله قاجاری اصل ناصرالدین شاه
+      <Typography variant="h3" fontSize="12px" fontWeight={700} color="black">
+        فروشگاه اطلس - شعبه ستارخان
+      </Typography>
+      <Typography variant="h4" fontSize="12px" fontWeight={600} color="black">
+        محسن رضانژاد
       </Typography>
       <Grid container Direction="row" gap="4px">
-        <SellIcon
+        <LocationOnRoundedIcon
           sx={{
             color: "#FFC700",
             width: "18px",
             height: "18px",
-            transform: "rotate(80deg)",
           }}
         />
-        <Typography
-          sx={{ fontSize: "12px", fontWeight: 500, color: "#282828" }}
-        >
-          1,200,000 تومان
+        <Typography sx={{ fontSize: "10px", fontWeight: 600, color: "black" }}>
+          تهران، ستارخان
         </Typography>
-      </Grid>
-      <Grid container direction="row" justifyContent="space-between">
-        <Text>تهران، ستارخان</Text>
-        <Text>2 ساعت پیش</Text>
       </Grid>
       <Button
         variant="contained"

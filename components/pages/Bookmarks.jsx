@@ -2,7 +2,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import { BoxItemsCarousel } from "../layout/BoxItemesCarousel";
 
-export const BookmarksPage = () => {
+export const Bookmarks = () => {
   return (
     <Box
       sx={{ maxWidth: "1440px", margin: "0 auto", padding: "30px 0 40px 0" }}

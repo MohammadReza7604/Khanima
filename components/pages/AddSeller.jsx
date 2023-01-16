@@ -10,7 +10,7 @@ import {
 import { PhotoAddBox } from "../surfaces/PhotoAddBox";
 import AddIcon from "@mui/icons-material/Add";
 
-export const AddSellerPage = () => {
+export const AddSeller = () => {
   const CustomTextField = styled(TextField)({
     width: "265px",
     height: "44px",

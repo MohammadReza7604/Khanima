@@ -5,13 +5,12 @@ import {
   InputLabel,
   MenuItem,
   Select,
-  Typography,
 } from "@mui/material";
 import React, { useState } from "react";
-import { BoxItemsCarousel } from "../layout/BoxItemesCarousel";
+import { BoxItemsShopCarousel } from "../layout/‌BoxItemesShopCarousel";
 import { AppBarBanner } from "../surfaces/AppBarBanner";
 
-export const ShopListPage = () => {
+export const ShopList = () => {
   const [value, setValue] = useState("");
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -56,14 +55,7 @@ export const ShopListPage = () => {
             </Select>
           </FormControl>
         </Grid>
-        <Grid
-          container
-          // padding="10px 85px 10px 0"
-          direction="column"
-          // textAlign="center"
-          gap="45px"
-          justifyContent="center"
-        >
+        <Grid container direction="column" gap="45px" justifyContent="center">
           <Grid
             container
             width="100%"
@@ -71,26 +63,26 @@ export const ShopListPage = () => {
             gap="46px"
             justifyContent="center"
           >
-            <BoxItemsCarousel />
-            <BoxItemsCarousel />
-            <BoxItemsCarousel />
-            <BoxItemsCarousel />
-            <BoxItemsCarousel />
-            <BoxItemsCarousel />
-            <BoxItemsCarousel />
-            <BoxItemsCarousel />
-            <BoxItemsCarousel />
-            <BoxItemsCarousel />
-            <BoxItemsCarousel />
-            <BoxItemsCarousel />
-            <BoxItemsCarousel />
-            <BoxItemsCarousel />
-            <BoxItemsCarousel />
-            <BoxItemsCarousel />
-            <BoxItemsCarousel />
-            <BoxItemsCarousel />
-            <BoxItemsCarousel />
-            <BoxItemsCarousel />
+            <BoxItemsShopCarousel />
+            <BoxItemsShopCarousel />
+            <BoxItemsShopCarousel />
+            <BoxItemsShopCarousel />
+            <BoxItemsShopCarousel />
+            <BoxItemsShopCarousel />
+            <BoxItemsShopCarousel />
+            <BoxItemsShopCarousel />
+            <BoxItemsShopCarousel />
+            <BoxItemsShopCarousel />
+            <BoxItemsShopCarousel />
+            <BoxItemsShopCarousel />
+            <BoxItemsShopCarousel />
+            <BoxItemsShopCarousel />
+            <BoxItemsShopCarousel />
+            <BoxItemsShopCarousel />
+            <BoxItemsShopCarousel />
+            <BoxItemsShopCarousel />
+            <BoxItemsShopCarousel />
+            <BoxItemsShopCarousel />
           </Grid>
         </Grid>
       </Grid>

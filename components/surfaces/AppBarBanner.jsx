@@ -59,7 +59,7 @@ export const AppBarBanner = () => {
     <Box
       sx={{
         width: "100%",
-        height: "421px",
+        height: "422px",
         background: "url(/images/app-bar-banner-pic.jpg)",
       }}
     >

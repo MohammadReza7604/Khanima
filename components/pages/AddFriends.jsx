@@ -11,7 +11,7 @@ import { fontWeight } from "@mui/system";
 import React from "react";
 import { CustomBox } from "../layout/CustomBox";
 
-export const AddFriendsPage = () => {
+export const AddFriends = () => {
   const BoxTypography = styled(Typography)({
     fontSize: "16px",
     fontWeight: 600,

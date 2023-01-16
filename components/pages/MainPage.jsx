@@ -1,39 +1,253 @@
-import { Box, Stack } from "@mui/material";
+import { Grid, styled, Typography } from "@mui/material";
+import Image from "next/image";
 import React from "react";
-import { HeaderNavbar } from "../surfaces/HeaderNavbar";
 import { AppBarBanner } from "../surfaces/AppBarBanner";
-import { ModelListCardAdsPage } from "../surfaces/ModelListCardAdsPage";
-import { AdsPage } from "./AdsPage";
-import { SingleProductPage } from "./SingleProductPage";
-import { AddAdPage } from "./AddAdPage";
-import { AddAdAnotherVersionPage } from "./AddAdAnotherVersionPage";
-import { ShopListPage } from "./ShopListPage";
-import { MyAdsPage } from "./MyAdsPage";
-import { SellerPage } from "./SellerPage";
-import { ExpertSinglePage } from "./ExpertSinglePage";
-import { SellerTermsPage } from "./SellerTermsPage";
-import { SuggestPage } from "./SuggestPage";
-import { TermsConditions } from "./TermsConditions";
-import { ChatPage } from "./ChatPage";
-import { AboutUs } from "./AboutUs";
-import { SupportPage } from "./SupportPage";
-import { AddFriendsPage } from "./AddFriendsPage";
-import { AddSellerPage } from "./AddSellerPage";
+import { VectorBox } from "../surfaces/VectorBox";
+import { CustomBox } from "../layout/CustomBox";
+import {
+  ExpertBoxCarousel,
+  MainPageAdCarousel,
+  MainPageCarousel,
+  MainPageShopCarousel,
+  WeblogBoxCarousel,
+} from "../layout/MainPageCarousel";
 
 export const MainPage = () => {
+  const CustomImage = styled(Image)({
+    borderRadius: "10px",
+  });
   return (
     <>
-      <Stack direction="column">
-        <Box>
-          <HeaderNavbar />
-        </Box>
-        {/* <Box sx={{ marginTop: "72px" }}>
-          <AppBarBanner />
-        </Box> */}
-        <Box>
-          <AddSellerPage />
-        </Box>
-      </Stack>
+      <AppBarBanner />
+      <Grid
+        container
+        sx={{ maxWidth: "1440px", margin: "0 auto", padding: "30px 0 40px 0" }}
+      >
+        <Grid container direction="column" gap="64px" width="100%">
+          <Grid container direction="row" justifyContent="space-between">
+            <CustomImage
+              width={406}
+              height={114}
+              alt="banner"
+              src="/images/pic-1.png"
+            />
+            <CustomImage
+              width={406}
+              height={114}
+              alt="banner"
+              src="/images/pic-2.png"
+            />
+            <CustomImage
+              width={406}
+              height={114}
+              alt="banner"
+              src="/images/pic-3.png"
+            />
+          </Grid>
+          <Grid container>
+            <VectorBox />
+          </Grid>
+          <Grid
+            container
+            justifyContent="center"
+            direction="column"
+            alignItems="center"
+            position="relative"
+            zIndex={1}
+          >
+            <Typography
+              variant="h1"
+              fontSize="24px"
+              fontWeight={700}
+              position="absolute"
+              top="-14px"
+              zIndex={2}
+              padding="0 20px"
+              backgroundColor="#282828"
+            >
+              آگهی
+            </Typography>
+            <CustomBox width="100%" height="370px">
+              <MainPageAdCarousel />
+            </CustomBox>
+            <Typography
+              variant="h1"
+              fontSize="14px"
+              fontWeight={700}
+              position="absolute"
+              bottom="-4px"
+              right="116px"
+              zIndex={2}
+              padding="0 20px"
+              backgroundColor="#282828"
+            >
+              مشاهده بیشتر
+            </Typography>
+          </Grid>
+          <Grid
+            container
+            justifyContent="center"
+            direction="column"
+            alignItems="center"
+            position="relative"
+            zIndex={1}
+          >
+            <Typography
+              variant="h1"
+              fontSize="24px"
+              fontWeight={700}
+              position="absolute"
+              top="-14px"
+              zIndex={2}
+              padding="0 20px"
+              backgroundColor="#282828"
+            >
+              حجره‌ها
+            </Typography>
+            <CustomBox width="100%" height="370px">
+              <MainPageShopCarousel />
+            </CustomBox>
+            <Typography
+              variant="h1"
+              fontSize="14px"
+              fontWeight={700}
+              position="absolute"
+              bottom="-4px"
+              right="116px"
+              zIndex={2}
+              padding="0 20px"
+              backgroundColor="#282828"
+            >
+              مشاهده بیشتر
+            </Typography>
+          </Grid>
+          <Typography
+            fontSize="26px"
+            fontWeight={700}
+            textAlign="center"
+            width="1440px"
+          >
+            کارشناس ها
+          </Typography>
+          <Grid
+            container
+            width="100vw"
+            alignItems="center"
+            gap="40px"
+            direction="column"
+          >
+            <ExpertBoxCarousel />
+          </Grid>
+          <Grid
+            container
+            justifyContent="center"
+            direction="column"
+            alignItems="center"
+            position="relative"
+            zIndex={1}
+          >
+            <Typography
+              variant="h1"
+              fontSize="24px"
+              fontWeight={700}
+              position="absolute"
+              top="-14px"
+              zIndex={2}
+              padding="0 20px"
+              backgroundColor="#282828"
+            >
+              مزایده
+            </Typography>
+            <CustomBox width="100%" height="370px">
+              <MainPageCarousel />
+            </CustomBox>
+            <Typography
+              variant="h1"
+              fontSize="14px"
+              fontWeight={700}
+              position="absolute"
+              bottom="-4px"
+              right="116px"
+              zIndex={2}
+              padding="0 20px"
+              backgroundColor="#282828"
+            >
+              مشاهده بیشتر
+            </Typography>
+          </Grid>
+          <Grid
+            container
+            justifyContent="center"
+            direction="column"
+            alignItems="center"
+            position="relative"
+            zIndex={1}
+          >
+            <Typography
+              variant="h1"
+              fontSize="24px"
+              fontWeight={700}
+              position="absolute"
+              top="-14px"
+              zIndex={2}
+              padding="0 20px"
+              backgroundColor="#282828"
+            >
+              درخواست
+            </Typography>
+            <CustomBox width="100%" height="370px">
+              <MainPageAdCarousel />
+            </CustomBox>
+            <Typography
+              variant="h1"
+              fontSize="14px"
+              fontWeight={700}
+              position="absolute"
+              bottom="-4px"
+              right="116px"
+              zIndex={2}
+              padding="0 20px"
+              backgroundColor="#282828"
+            >
+              مشاهده بیشتر
+            </Typography>
+          </Grid>
+          <Typography
+            fontSize="26px"
+            fontWeight={700}
+            textAlign="center"
+            width="1440px"
+          >
+            کلکسیونر ها
+          </Typography>
+          <Grid
+            container
+            width="100vw"
+            alignItems="center"
+            gap="40px"
+            direction="column"
+          >
+            <ExpertBoxCarousel />
+          </Grid>
+          <Typography
+            fontSize="26px"
+            fontWeight={700}
+            textAlign="center"
+            width="1440px"
+          >
+            وبلاگ
+          </Typography>
+          <Grid
+            container
+            width="100vw"
+            alignItems="center"
+            gap="40px"
+            direction="column"
+          >
+            <WeblogBoxCarousel />
+          </Grid>
+        </Grid>
+      </Grid>
     </>
   );
 };

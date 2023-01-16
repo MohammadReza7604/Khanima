@@ -14,7 +14,7 @@ import {
   SupportPageItemFooter,
 } from "../layout/SupportPageItem";
 
-export const SupportPage = () => {
+export const Support = () => {
   const CustomTextField = styled(TextField)({
     width: "400px",
     height: "40px",

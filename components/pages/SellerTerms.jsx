@@ -2,7 +2,7 @@ import { Grid, Typography } from "@mui/material";
 import React from "react";
 import { CustomButtonSellerTerms } from "../inputs/CustomButtonSellerTerms";
 
-export const SellerTermsPage = () => {
+export const SellerTerms = () => {
   return (
     <Grid
       container
