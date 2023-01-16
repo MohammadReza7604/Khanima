@@ -5,8 +5,18 @@ import AssignmentIcon from "@mui/icons-material/Assignment";
 export const IconTitle = (props) => {
   return (
     <Grid container direction="row" gap="5px" justifyContent="flex-end">
-      <Typography sx={{ direction: `${props.dir}` }}>{props.title}</Typography>
+      <Typography sx={{ direction: `${props.dir}`, ...props.style }}>
+        {props.title}
+      </Typography>
       <Box>{props.icon}</Box>
+    </Grid>
+  );
+};
+export const IconTitleGlobal = (props) => {
+  return (
+    <Grid container direction="row" gap="5px" width="auto">
+      <Box>{props.icon}</Box>
+      <Typography sx={{ ...props.style }}>{props.title}</Typography>
     </Grid>
   );
 };

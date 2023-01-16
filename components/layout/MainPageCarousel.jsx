@@ -210,3 +210,53 @@ export const WeblogBoxCarousel = () => {
     </Test>
   );
 };
+export const WeblogSingletBoxCarousel = () => {
+  const Test = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  `;
+  const [sliderRef] = useKeenSlider({
+    loop: true,
+    mode: "free",
+    rtl: true,
+    slides: {
+      perView: 7.3,
+      spacing: 15,
+    },
+  });
+
+  return (
+    <Test ref={sliderRef} className="keen-slider">
+      <div className="keen-slider__slide">
+        <WeblogBox />
+      </div>
+      <div className="keen-slider__slide">
+        <WeblogBox />
+      </div>
+      <div className="keen-slider__slide">
+        <WeblogBox />
+      </div>
+      <div className="keen-slider__slide">
+        <WeblogBox />
+      </div>
+      <div className="keen-slider__slide">
+        <WeblogBox />
+      </div>
+      <div className="keen-slider__slide">
+        <WeblogBox />
+      </div>
+      <div className="keen-slider__slide">
+        <WeblogBox />
+      </div>
+      <div className="keen-slider__slide">
+        <WeblogBox />
+      </div>
+      <div className="keen-slider__slide">
+        <WeblogBox />
+      </div>
+    </Test>
+  );
+};

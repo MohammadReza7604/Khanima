@@ -148,7 +148,7 @@ export const AddSeller = () => {
               multiline
               rows={10}
               maxRows={10}
-              minRows={10}
+              minRows={8}
               sx={{ width: "600px" }}
             />
           </Box>
