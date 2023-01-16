@@ -13,6 +13,7 @@ export const PromoteAd = () => {
   `;
   const TD = styled.td`
     border: 2px solid #00a693;
+    text-align: center;
   `;
   return (
     <Grid
@@ -23,7 +24,8 @@ export const PromoteAd = () => {
         container
         direction="column"
         gap="64px"
-        marginTop="100px"
+        marginTop="128px"
+        marginBottom="100px"
         alignItems="center"
       >
         <Typography variant="h1" fontSize="24px" fontWeight={700}>
@@ -47,19 +49,141 @@ export const PromoteAd = () => {
             </tr>
             <tr>
               <TD>
-                {/* <Box> */}
-                {/* <Typography
-                    variant="subtitle1"
-                    fontSize="16px"
-                    fontWeight={700}
-                  > */}
-                آگهی ویژه
-                {/* </Typography> */}
-                {/* </Box> */}
+                <Typography
+                  variant="subtitle1"
+                  fontSize="16px"
+                  fontWeight={700}
+                  color="black"
+                >
+                  آگهی ویژه
+                </Typography>
               </TD>
-              <TD></TD>
-              <TD></TD>
-              <TD></TD>
+              <TD>
+                <Typography
+                  variant="subtitle1"
+                  fontSize="14px"
+                  fontWeight={600}
+                  color="black"
+                >
+                  3000 تومان
+                </Typography>
+              </TD>
+              <TD>
+                <Typography
+                  variant="subtitle1"
+                  fontSize="12px"
+                  fontWeight={500}
+                  color="black"
+                  width="386px"
+                  textAlign="justify"
+                  display="inline-flex"
+                >
+                  چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
+                  روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط
+                  فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود
+                  ابزارهای کاربردی می باشد.
+                </Typography>
+              </TD>
+              <TD>
+                <Button
+                  variant="contained"
+                  sx={{ width: "108px", height: "32px" }}
+                >
+                  پرداخت
+                </Button>
+              </TD>
+            </tr>
+            <tr>
+              <TD>
+                <Typography
+                  variant="subtitle1"
+                  fontSize="16px"
+                  fontWeight={700}
+                  color="black"
+                >
+                  آگهی ویژه
+                </Typography>
+              </TD>
+              <TD>
+                <Typography
+                  variant="subtitle1"
+                  fontSize="14px"
+                  fontWeight={600}
+                  color="black"
+                >
+                  3000 تومان
+                </Typography>
+              </TD>
+              <TD>
+                <Typography
+                  variant="subtitle1"
+                  fontSize="12px"
+                  fontWeight={500}
+                  color="black"
+                  width="386px"
+                  textAlign="justify"
+                  display="inline-flex"
+                >
+                  چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
+                  روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط
+                  فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود
+                  ابزارهای کاربردی می باشد.
+                </Typography>
+              </TD>
+              <TD>
+                <Button
+                  variant="contained"
+                  sx={{ width: "108px", height: "32px" }}
+                >
+                  پرداخت
+                </Button>
+              </TD>
+            </tr>
+            <tr>
+              <TD>
+                <Typography
+                  variant="subtitle1"
+                  fontSize="16px"
+                  fontWeight={700}
+                  color="black"
+                >
+                  آگهی ویژه
+                </Typography>
+              </TD>
+              <TD>
+                <Typography
+                  variant="subtitle1"
+                  fontSize="14px"
+                  fontWeight={600}
+                  color="black"
+                >
+                  3000 تومان
+                </Typography>
+              </TD>
+              <TD>
+                <Typography
+                  variant="subtitle1"
+                  fontSize="12px"
+                  fontWeight={500}
+                  color="black"
+                  width="386px"
+                  textAlign="justify"
+                  display="inline-flex"
+                >
+                  چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
+                  روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط
+                  فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود
+                  ابزارهای کاربردی می باشد.
+                </Typography>
+              </TD>
+              <TD>
+                <Button
+                  variant="contained"
+                  sx={{ width: "108px", height: "32px" }}
+                >
+                  پرداخت
+                </Button>
+              </TD>
             </tr>
           </Table>
         </Box>
