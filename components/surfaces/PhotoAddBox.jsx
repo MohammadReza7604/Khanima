@@ -13,7 +13,8 @@ export const PhotoAddBox = () => {
       justifyContent="center"
       alignItems="center"
     >
-      <IconButton>
+      <IconButton component="label">
+        <input hidden accept="image/*" type="file" />
         <TbCameraPlus
           style={{ color: "white", width: "42px", height: "42px" }}
         />

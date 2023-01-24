@@ -10,6 +10,7 @@ import {
   IconButton,
   InputAdornment,
   InputLabel,
+  Menu,
   MenuItem,
   Select,
   Stack,
@@ -18,6 +19,26 @@ import {
   Typography,
 } from "@mui/material";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+
+const currencies = [
+  {
+    value: "USD",
+    label: "$",
+  },
+  {
+    value: "EUR",
+    label: "€",
+  },
+  {
+    value: "BTC",
+    label: "฿",
+  },
+  {
+    value: "JPY",
+    label: "¥",
+  },
+];
 
 export const AppBarBanner = () => {
   const HeaderTitle = styled(Typography)({
@@ -36,24 +57,23 @@ export const AppBarBanner = () => {
       "&.Mui-focused fieldset": {
         borderColor: "white",
       },
-    },
-  });
-  const SelectCustom = styled(Select)({
-    "& .MuiOutlinedInput-root": {
-      "& fieldset": {
-        borderColor: "white",
-      },
-      "&:hover fieldset": {
-        borderColor: "#00A693",
-      },
-      "&.Mui-focused fieldset": {
-        borderColor: "white",
+      "& .MuiSelect-icon": {
+        color: "white",
       },
     },
   });
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
   const [value, setValue] = useState("");
+  const [currency, setCurrency] = useState("EUR");
   const handleChange = (event) => {
     setAge(event.target.value);
+  };
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
   };
   return (
     <Box
@@ -114,37 +134,68 @@ export const AppBarBanner = () => {
                 />
               )}
             />
-            <FormControl sx={{ width: "180px", height: "40px" }}>
-              <InputLabel id="ad-type">نوع آگهی</InputLabel>
-              <Select
-                labelId="ad-type"
-                id="ad-type"
-                value={value}
+
+            {/* <FormControl sx={{ width: "180px", height: "40px" }}>
+              <TextField
+                sx={{ width: "180px", height: "40px" }}
+                id="outlined-select-currency"
+                select
+                variant="outlined"
                 label="نوع آگهی"
+                // value={currency}
                 onChange={handleChange}
+              >
+                {currencies.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            </FormControl> */}
+
+            <FormControl>
+              <Button
+                id="test"
+                aria-haspopup="true"
+                aria-controls={open ? "menu-test" : undefined}
+                aria-expanded={open ? "true" : undefined}
+                variant="outlined"
+                onClick={handleClick}
+                endIcon={<KeyboardArrowDownIcon sx={{ color: "white" }} />}
                 sx={{
-                  borderRadius: "7px",
+                  width: "190px",
+                  height: "60px",
+                  color: "white",
                   border: "1px solid white",
-                  "& .MuiSelect-icon": {
-                    color: "white",
-                  },
+                  display: "flex",
+                  justifyContent: "space-between",
                 }}
               >
-                <MenuItem value="">
-                  <em>None</em>
-                </MenuItem>
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
-              </Select>
+                نوع آگهی
+              </Button>
+              <Menu
+                id="menu-test"
+                anchorEl={anchorEl}
+                open={open}
+                MenuListProps={{
+                  "aria-labelledby": "test",
+                }}
+                onClose={handleClose}
+                // sx={{ width: "500px" }}
+              >
+                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem onClick={handleClose}>Logout</MenuItem>
+              </Menu>
             </FormControl>
+
             <FormControl sx={{ width: "180px", height: "40px" }}>
               <InputLabel id="ad-type">دسته‌بندی</InputLabel>
               <Select
                 labelId="ad-type"
                 id="ad-type"
                 value={value}
-                label="دسته‌بندی"
+                // label="دسته‌بندی"
                 onChange={handleChange}
                 sx={{
                   borderRadius: "7px",

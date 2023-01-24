@@ -4,13 +4,13 @@ import React from "react";
 export const LinkNavbar = (props) => {
   const LinkNav = styled(Link)({
     color: "white",
-    fontSize: "16px",
-    fontWeight: 500,
+    fontSize: "18px",
+    fontWeight: 600,
     textDecoration: "none",
     "&:hover": {
       textDecoration: "none",
       cursor: "pointer",
     },
   });
-  return <LinkNav>{props.text}</LinkNav>;
+  return <LinkNav href={props.href}>{props.text}</LinkNav>;
 };

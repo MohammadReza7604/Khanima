@@ -5,6 +5,7 @@ import ChatBubbleRoundedIcon from "@mui/icons-material/ChatBubbleRounded";
 import { LinkNavbar } from "./LinkNavbar";
 import { LoginDialog } from "../feedback/LoginDialog";
 import { RegisterDialog } from "../feedback/RegisterDialog";
+import { AuthCodeInput } from "../feedback/AuthCodeInput";
 
 export const HeaderNavbar = () => {
   const NavButtons = styled(Button)({
@@ -26,22 +27,21 @@ export const HeaderNavbar = () => {
       }}
     >
       <Box sx={{ maxWidth: "1440px", margin: "0 auto" }}>
-        <Stack
+        <Grid
           container
           direction="row"
           justifyContent="space-between"
           alignItems="center"
-          xs={12}
           sx={{ width: "1440px" }}
         >
           <Stack direction="row" xs={10} gap="30px">
-            <LinkNavbar text="خانه" />
-            <LinkNavbar text="دسته بندی‌ها" />
-            <LinkNavbar text="نقشه" />
-            <LinkNavbar text="وبلاگ" />
-            <LinkNavbar text="گروه‌ها" />
-            <LinkNavbar text="قوانین" />
-            <LinkNavbar text="پیشنهاد به ما" />
+            <LinkNavbar href="/" text="خانه" />
+            <LinkNavbar href="#" text="دسته بندی‌ها" />
+            <LinkNavbar href="#" text="نقشه" />
+            <LinkNavbar href="#" text="وبلاگ" />
+            <LinkNavbar href="#" text="گروه‌ها" />
+            <LinkNavbar href="#" text="قوانین" />
+            <LinkNavbar href="#" text="پیشنهاد به ما" />
             <Box
               sx={{
                 display: "flex",
@@ -51,7 +51,7 @@ export const HeaderNavbar = () => {
               }}
             >
               <BookmarkOutlinedIcon />
-              <LinkNavbar text="علاقمندی" />
+              <LinkNavbar href="/bookmarks" text="علاقمندی" />
             </Box>
             <Box
               sx={{
@@ -62,17 +62,18 @@ export const HeaderNavbar = () => {
               }}
             >
               <ChatBubbleRoundedIcon />
-              <LinkNavbar text="چت" />
+              <LinkNavbar href="/chat" text="چت" />
             </Box>
           </Stack>
           <Stack direction="row" gap="10px" xs={2}>
             <NavButtons variant="contained">ثبت آگهی</NavButtons>
             <NavButtons variant="contained">ورود‌‌‌ /‌ ثبت‌نام</NavButtons>
           </Stack>
-        </Stack>
+        </Grid>
       </Box>
-      {/* <LoginDialog /> */}
+      <LoginDialog />
       {/* <RegisterDialog /> */}
+      {/* <AuthCodeInput /> */}
     </AppBar>
   );
 };

@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Avatar,
   Box,
   Button,
   ButtonBase,
   Divider,
+  FormControl,
   Grid,
+  InputLabel,
+  MenuItem,
+  Select,
   styled,
   Typography,
 } from "@mui/material";
+import Image from "next/image";
 import { CustomBox } from "../layout/CustomBox";
+import ProductImagesSlider from "../product-images-slider/ProductImagesSlider";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import DateRangeOutlinedIcon from "@mui/icons-material/DateRangeOutlined";
 import MusicNoteOutlinedIcon from "@mui/icons-material/MusicNoteOutlined";
@@ -19,14 +25,10 @@ import ReportIcon from "@mui/icons-material/Report";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import ShareIcon from "@mui/icons-material/Share";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import ProductImagesSlider from "../product-images-slider/ProductImagesSlider";
-import Image from "next/image";
-import {
-  MainPageAdCarousel,
-  MainPageShopCarousel,
-} from "../layout/MainPageCarousel";
+import { CommentBox } from "../surfaces/CommentBox";
+import AddIcon from "@mui/icons-material/Add";
 
-export const SingleProduct = () => {
+export const GroupAd = () => {
   const CustomTypo = styled(Typography)({
     fontSize: "18px",
     fontWeight: 700,
@@ -54,7 +56,11 @@ export const SingleProduct = () => {
     color: "white",
     textAlign: "justify",
   });
+  const [value, setValue] = useState(0);
 
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
   return (
     <Grid
       container
@@ -258,32 +264,91 @@ export const SingleProduct = () => {
             <Image width={645} height={144} alt="map" src="/images/map.png" />
           </Grid>
         </Grid>
-        <Grid container justifyContent="center" gap="40px">
-          <Typography variant="h1" fontSize="24px" fontWeight={700}>
-            آگهی های مشابه
+        <CustomBox
+          width="100%"
+          height="auto"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "50px",
+          }}
+        >
+          <Typography fontSize="24px" fontWeight={700}>
+            نظرات
           </Typography>
-          <Grid
-            container
-            bgcolor="white"
-            borderRadius="15px"
-            padding="24px 18px"
-          >
-            <MainPageAdCarousel />
+          <Grid container gap="50px" width="995px" margin="0 auto">
+            <Grid container justifyContent="space-between">
+              <FormControl sx={{ width: "264px", height: "40px" }}>
+                <InputLabel id="ad-type">جدیدترین</InputLabel>
+                <Select
+                  labelId="ad-type"
+                  id="ad-type"
+                  // value={value}
+                  label="جدیدترین"
+                  onChange={handleChange}
+                  sx={{
+                    border: "1px solid white",
+                    "& .MuiSelect-icon": {
+                      color: "#00A695",
+                    },
+                  }}
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
+              </FormControl>
+              <Button
+                variant="contained"
+                size="large"
+                startIcon={<AddIcon sx={{ color: "white" }} />}
+              >
+                افزودن نظر
+              </Button>
+            </Grid>
+            <Grid
+              container
+              sx={{ gap: "24" }}
+              direction="column"
+              alignItems="center"
+            >
+              <CommentBox
+                src="/images/app-bar-banner-pic.jpg"
+                username="مرتضی شیرین زاده"
+                time="پنج دقیقه پیش"
+                commentText="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، "
+              />
+              <CommentBox
+                src="/images/app-bar-banner-pic.jpg"
+                username="مرتضی شیرین زاده"
+                time="پنج دقیقه پیش"
+                commentText="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، "
+              />
+              <CommentBox
+                src="/images/app-bar-banner-pic.jpg"
+                username="مرتضی شیرین زاده"
+                time="پنج دقیقه پیش"
+                commentText="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، "
+              />
+              <CommentBox
+                src="/images/app-bar-banner-pic.jpg"
+                username="مرتضی شیرین زاده"
+                time="پنج دقیقه پیش"
+                commentText="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، "
+              />
+              <CommentBox
+                src="/images/app-bar-banner-pic.jpg"
+                username="مرتضی شیرین زاده"
+                time="پنج دقیقه پیش"
+                commentText="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، "
+              />
+            </Grid>
           </Grid>
-        </Grid>
-        <Grid container justifyContent="center" gap="40px">
-          <Typography variant="h1" fontSize="24px" fontWeight={700}>
-            آگهی های این فروشنده
-          </Typography>
-          <Grid
-            container
-            bgcolor="white"
-            borderRadius="15px"
-            padding="24px 18px"
-          >
-            <MainPageAdCarousel />
-          </Grid>
-        </Grid>
+        </CustomBox>
       </Grid>
     </Grid>
   );

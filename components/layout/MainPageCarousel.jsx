@@ -109,6 +109,40 @@ export const MainPageShopCarousel = () => {
     </div>
   );
 };
+export const MainPageGroupCarousel = () => {
+  const [sliderRef] = useKeenSlider({
+    loop: true,
+    mode: "free",
+    rtl: true,
+    slides: {
+      perView: 4.8,
+      spacing: 15,
+    },
+  });
+
+  return (
+    <div ref={sliderRef} className="keen-slider">
+      <div className="keen-slider__slide">
+        <BoxItemsShopCarousel />
+      </div>
+      <div className="keen-slider__slide">
+        <BoxItemsShopCarousel />
+      </div>
+      <div className="keen-slider__slide">
+        <BoxItemsShopCarousel />
+      </div>
+      <div className="keen-slider__slide">
+        <BoxItemsShopCarousel />
+      </div>
+      <div className="keen-slider__slide">
+        <BoxItemsShopCarousel />
+      </div>
+      <div className="keen-slider__slide">
+        <BoxItemsShopCarousel />
+      </div>
+    </div>
+  );
+};
 export const ExpertBoxCarousel = () => {
   const Test = styled.div`
     display: flex;

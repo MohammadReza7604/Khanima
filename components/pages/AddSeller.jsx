@@ -3,6 +3,7 @@ import {
   Box,
   Button,
   Grid,
+  InputBase,
   styled,
   TextField,
   Typography,
@@ -57,11 +58,18 @@ export const AddSeller = () => {
           xs={6}
         >
           <Grid container gap="30px">
-            <CustomTextField variant="outlined" id="name" label="نام" />
+            <CustomTextField
+              variant="outlined"
+              id="name"
+              label="نام"
+              autoComplete="off"
+              type=""
+            />
             <CustomTextField
               variant="outlined"
               id="last-name"
               label="نام‌خانوادگی"
+              autoComplete="off"
             />
           </Grid>
           <Grid container gap="30px">
@@ -69,11 +77,14 @@ export const AddSeller = () => {
               variant="outlined"
               id="store-name"
               label="نام فروشگاه"
+              autoComplete="off"
             />
             <CustomTextField
               variant="outlined"
               id="store-id"
               label="آیدی فروشگاه"
+              autoComplete="off"
+              type="url"
             />
           </Grid>
           <CustomTextField
@@ -81,23 +92,30 @@ export const AddSeller = () => {
             id="address"
             label="آدرس"
             sx={{ width: "560px" }}
+            autoComplete="off"
           />
           <CustomTextField
             variant="outlined"
             id="location-link"
             label="لینک لوکیشن"
             sx={{ width: "560px" }}
+            autoComplete="off"
+            type="url"
           />
           <Grid container gap="30px">
             <CustomTextField
               variant="outlined"
               id="landline-number"
               label="شماره تماس ثابت"
+              autoComplete="off"
+              type="number"
             />
             <CustomTextField
               variant="outlined"
               id="mobile-phone-number"
               label="شماره تماس همراه"
+              autoComplete="off"
+              type="number"
             />
           </Grid>
           <Grid container gap="30px">
@@ -105,17 +123,23 @@ export const AddSeller = () => {
               variant="outlined"
               id="telegram-id"
               label="آیدی تلگرام"
+              autoComplete="off"
+              type="url"
             />
             <CustomTextField
               variant="outlined"
               id="eitaa-id"
               label="آیدی ایتا"
+              autoComplete="off"
+              type="url"
             />
           </Grid>
           <CustomTextField
             variant="outlined"
             id="password"
             label="رمز عبور"
+            autoComplete="off"
+            type="password"
             sx={{ width: "560px" }}
           />
           <Grid container justifyContent="flex-end" marginTop="30px">
