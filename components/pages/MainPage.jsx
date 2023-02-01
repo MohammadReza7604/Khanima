@@ -1,4 +1,4 @@
-import { Grid, styled, Typography } from "@mui/material";
+import { Grid, Link, styled, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import { AppBarBanner } from "../surfaces/AppBarBanner";
@@ -70,19 +70,22 @@ export const MainPage = () => {
             <CustomBox width="100%" height="370px">
               <MainPageAdCarousel />
             </CustomBox>
-            <Typography
+            <Link
               variant="h1"
               fontSize="14px"
               fontWeight={700}
               position="absolute"
               bottom="-4px"
-              right="116px"
+              right="60px"
               zIndex={2}
               padding="0 20px"
               backgroundColor="#282828"
+              underline="none"
+              color="white"
+              href="#"
             >
               مشاهده بیشتر
-            </Typography>
+            </Link>
           </Grid>
           <Grid
             container
@@ -107,19 +110,22 @@ export const MainPage = () => {
             <CustomBox width="100%" height="370px">
               <MainPageShopCarousel />
             </CustomBox>
-            <Typography
+            <Link
               variant="h1"
               fontSize="14px"
               fontWeight={700}
               position="absolute"
               bottom="-4px"
-              right="116px"
+              right="60px"
               zIndex={2}
               padding="0 20px"
               backgroundColor="#282828"
+              underline="none"
+              color="white"
+              href="#"
             >
               مشاهده بیشتر
-            </Typography>
+            </Link>
           </Grid>
           <Typography
             fontSize="26px"
@@ -161,19 +167,22 @@ export const MainPage = () => {
             <CustomBox width="100%" height="370px">
               <MainPageCarousel />
             </CustomBox>
-            <Typography
+            <Link
               variant="h1"
               fontSize="14px"
               fontWeight={700}
               position="absolute"
               bottom="-4px"
-              right="116px"
+              right="60px"
               zIndex={2}
               padding="0 20px"
               backgroundColor="#282828"
+              underline="none"
+              color="white"
+              href="#"
             >
               مشاهده بیشتر
-            </Typography>
+            </Link>
           </Grid>
           <Grid
             container
@@ -198,19 +207,22 @@ export const MainPage = () => {
             <CustomBox width="100%" height="370px">
               <MainPageAdCarousel />
             </CustomBox>
-            <Typography
+            <Link
               variant="h1"
               fontSize="14px"
               fontWeight={700}
               position="absolute"
               bottom="-4px"
-              right="116px"
+              right="60px"
               zIndex={2}
               padding="0 20px"
               backgroundColor="#282828"
+              underline="none"
+              color="white"
+              href="#"
             >
               مشاهده بیشتر
-            </Typography>
+            </Link>
           </Grid>
           <Typography
             fontSize="26px"

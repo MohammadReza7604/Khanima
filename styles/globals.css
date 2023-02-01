@@ -1,41 +1,12 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Spartan:wght@400;500;600;700;800&display=swap);
+
 @font-face {
-  font-family: yekan;
-  font-weight: 200;
-  src: url(/fonts/Yekan-Bakh-Hairline.ttf);
+  font-family: "IRANSans";
+  src: url("/fonts/YekanBakhFaNum-Regular.woff");
 }
-@font-face {
-  font-family: yekan;
-  font-weight: 300;
-  src: url(/fonts/Yekan-Bakh-Thin.ttf);
-}
-@font-face {
-  font-family: yekan;
-  font-weight: 400;
-  src: url(/fonts/Yekan-Bakh-Light.ttf);
-}
-@font-face {
-  font-family: 500;
-  src: url(/fonts/Yekan-Bakh-Medium.ttf);
-}
-@font-face {
-  font-family: yekan;
-  font-weight: 600;
-  src: url(/fonts/Yekan-Bakh-Regular.ttf);
-}
-@font-face {
-  font-family: yekan;
-  font-weight: 700;
-  src: url(/fonts/Yekan-Bakh-Bold.ttf);
-}
-@font-face {
-  font-family: yekan;
-  font-weight: 800;
-  src: url(/fonts/Yekan-Bakh-Fat.ttf);
-}
-@font-face {
-  font-family: yekan;
-  font-weight: 900;
-  src: url(/fonts/Yekan-Bakh-Heavy.ttf);
+:root{
+  --font-primary: "IRANSans", "Poppins", sans-serif;
+  --font-secondary: "IRANSans", "Spartan", sans-serif;
 }
 html,
 body {
@@ -43,8 +14,7 @@ body {
   padding: 0;
   margin: 0;
   direction: rtl;
-  font-family: yekan;
-  font-weight: 600;
+  font-family: IRANSans;
   overflow-x: hidden;
   background-color: rgb(40, 40, 40);
 }
@@ -60,11 +30,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: yekan;
-  font-weight: 600;
+  font-family: IRANSans;
 }
 button {
-  font-family: yekan;
+  font-family: IRANSans;
   font-weight: 700;
 }
 a {

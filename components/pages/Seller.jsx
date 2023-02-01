@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {
   Box,
   Button,
+  ButtonGroup,
   Divider,
   FormControl,
   Grid,
@@ -35,13 +36,14 @@ export const Seller = () => {
     fontSize: "14px",
     fontWeight: 700,
     color: "#282828",
+    "&:hover": {
+      color: "black",
+    },
   });
-  const CustomGrid = styled(Grid)({
-    margin: "0 16px",
-    textAlign: "center",
-  });
-  const CustomDivider = styled(Divider)({
-    border: "0.50px solid white",
+  const CustomButtonGroup = styled(Button)({
+    display: "flex",
+    flexDirection: "column",
+    gap: "5px",
   });
   const CustomTab = styled(Tab)({
     color: "white",
@@ -96,36 +98,27 @@ export const Seller = () => {
               style={{ borderRadius: "15px" }}
             />
           </Grid>
-          <Grid
-            container
-            width="240px"
-            height="60px"
-            borderRadius="5px"
-            bgcolor="#00A693"
-            padding="5px"
-            direction="row"
-            justifyContent="center"
-          >
-            <CustomGrid>
-              <FaUserCheck
-                style={{ color: "#FFFFFF", width: "16x", height: "16x" }}
-              />
-              <Text>دنبال کردن</Text>
-            </CustomGrid>
-            <CustomDivider />
-            <CustomGrid>
-              <ChatBubbleOutlinedIcon
-                sx={{ color: "#FFFFFF", width: "16x", height: "16x" }}
-              />
-              <Text>چت</Text>
-            </CustomGrid>
-            <CustomDivider />
-            <CustomGrid>
-              <CallIcon
-                sx={{ color: "#FFFFFF", width: "16x", height: "16x" }}
-              />
-              <Text>تماس</Text>
-            </CustomGrid>
+          <Grid container width="240px" height="60px" justifyContent="center">
+            <ButtonGroup variant="contained">
+              <CustomButtonGroup>
+                <FaUserCheck
+                  style={{ color: "#FFFFFF", width: "16x", height: "16x" }}
+                />
+                <Text>دنبال کردن</Text>
+              </CustomButtonGroup>
+              <CustomButtonGroup>
+                <ChatBubbleOutlinedIcon
+                  sx={{ color: "#FFFFFF", width: "20px", height: "20px" }}
+                />
+                <Text>چت</Text>
+              </CustomButtonGroup>
+              <CustomButtonGroup>
+                <CallIcon
+                  sx={{ color: "#FFFFFF", width: "20px", height: "20px" }}
+                />
+                <Text>تماس</Text>
+              </CustomButtonGroup>
+            </ButtonGroup>
           </Grid>
         </Grid>
         <Grid container xs={4} paddingLeft="50px">

@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { AppBar, Box, Button, Grid, Link, Stack, styled } from "@mui/material";
 import BookmarkOutlinedIcon from "@mui/icons-material/BookmarkOutlined";
 import ChatBubbleRoundedIcon from "@mui/icons-material/ChatBubbleRounded";
-import { LinkNavbar } from "./LinkNavbar";
+import { LinkNavbar, LinkNavbarButton } from "./LinkNavbar";
 import { LoginDialog } from "../feedback/LoginDialog";
 import { RegisterDialog } from "../feedback/RegisterDialog";
 import { AuthCodeInput } from "../feedback/AuthCodeInput";
+import { CategorizeMenu } from "../navigation/CategorizeMenu";
 
 export const HeaderNavbar = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   const NavButtons = styled(Button)({
     backgroundColor: "#282828",
     color: "#00A693",
@@ -35,13 +44,29 @@ export const HeaderNavbar = () => {
           sx={{ width: "1440px" }}
         >
           <Stack direction="row" xs={10} gap="30px">
-            <LinkNavbar href="/" text="خانه" />
-            <LinkNavbar href="#" text="دسته بندی‌ها" />
-            <LinkNavbar href="#" text="نقشه" />
-            <LinkNavbar href="#" text="وبلاگ" />
-            <LinkNavbar href="#" text="گروه‌ها" />
-            <LinkNavbar href="#" text="قوانین" />
-            <LinkNavbar href="#" text="پیشنهاد به ما" />
+            <LinkNavbar id="home-navbar" href="/" text="خانه" />
+            <LinkNavbarButton
+              id="categorize-navbar"
+              aria-controls={open ? "categorize-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
+              text="دسته بندی‌ها"
+              onClick={handleClick}
+            />
+            <LinkNavbar id="map-navbar" href="#" text="نقشه" />
+            <LinkNavbar id="weblog-navbar" href="#" text="وبلاگ" />
+            <LinkNavbar id="group-navbar" href="#" text="گروه‌ها" />
+            <LinkNavbar id="rules-navbar" href="#" text="قوانین" />
+            <LinkNavbar id="proposal-navbar" href="#" text="پیشنهاد به ما" />
+            {/* <CategorizeMenu
+            id="categorize-menu"
+              MenuListProps={{
+                "aria-labelledby": "categorize-navbar",
+              }}
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+            /> */}
             <Box
               sx={{
                 display: "flex",

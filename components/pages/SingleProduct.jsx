@@ -4,6 +4,7 @@ import {
   Box,
   Button,
   ButtonBase,
+  ButtonGroup,
   Divider,
   Grid,
   styled,
@@ -35,13 +36,14 @@ export const SingleProduct = () => {
     fontSize: "14px",
     fontWeight: 400,
     color: "#282828",
+    "&:hover": {
+      color: "black",
+    },
   });
-  const CustomGrid = styled(Grid)({
-    margin: "0 16px",
-    textAlign: "center",
-  });
-  const CustomDivider = styled(Divider)({
-    border: "0.50px solid white",
+  const CustomButton = styled(Button)({
+    display: "flex",
+    flexDirection: "column",
+    gap: "5px",
   });
   const TitleTypography = styled(Typography)({
     fontSize: "14px",
@@ -49,10 +51,11 @@ export const SingleProduct = () => {
     color: "#00A693",
   });
   const BoxTypography = styled(Typography)({
-    fontSize: "14px",
-    fontWeight: 700,
+    fontSize: "12px",
+    fontWeight: 600,
     color: "white",
     textAlign: "justify",
+    lineHeight: "188%",
   });
 
   return (
@@ -102,47 +105,41 @@ export const SingleProduct = () => {
               container
               width="335px"
               height="62px"
-              borderRadius="5px"
-              bgcolor="#00A693"
-              padding="5px"
-              direction="row"
               margin="0 auto"
               justifyContent="center"
             >
-              <CustomGrid>
-                <CallIcon
-                  sx={{ color: "#FFFFFF", width: "20px", height: "20px" }}
-                />
-                <Text>تماس</Text>
-              </CustomGrid>
-              <CustomDivider />
-              <CustomGrid>
-                <ChatBubbleOutlinedIcon
-                  sx={{ color: "#FFFFFF", width: "20px", height: "20px" }}
-                />
-                <Text>چت</Text>
-              </CustomGrid>
-              <CustomDivider />
-              <CustomGrid>
-                <ReportIcon
-                  sx={{ color: "#FFFFFF", width: "20px", height: "20px" }}
-                />
-                <Text>گزارش</Text>
-              </CustomGrid>
-              <CustomDivider />
-              <CustomGrid>
-                <BookmarkIcon
-                  sx={{ color: "#FFFFFF", width: "20px", height: "20px" }}
-                />
-                <Text>ذخیره</Text>
-              </CustomGrid>
-              <CustomDivider />
-              <CustomGrid>
-                <ShareIcon
-                  sx={{ color: "#FFFFFF", width: "20px", height: "20px" }}
-                />
-                <Text>اشتراک</Text>
-              </CustomGrid>
+              <ButtonGroup variant="contained">
+                <CustomButton>
+                  <CallIcon
+                    sx={{ color: "#FFFFFF", width: "20px", height: "20px" }}
+                  />
+                  <Text>تماس</Text>
+                </CustomButton>
+                <CustomButton>
+                  <ChatBubbleOutlinedIcon
+                    sx={{ color: "#FFFFFF", width: "20px", height: "20px" }}
+                  />
+                  <Text>چت</Text>
+                </CustomButton>
+                <CustomButton>
+                  <ReportIcon
+                    sx={{ color: "#FFFFFF", width: "20px", height: "20px" }}
+                  />
+                  <Text>گزارش</Text>
+                </CustomButton>
+                <CustomButton>
+                  <BookmarkIcon
+                    sx={{ color: "#FFFFFF", width: "20px", height: "20px" }}
+                  />
+                  <Text>ذخیره</Text>
+                </CustomButton>
+                <CustomButton>
+                  <ShareIcon
+                    sx={{ color: "#FFFFFF", width: "20px", height: "20px" }}
+                  />
+                  <Text>اشتراک</Text>
+                </CustomButton>
+              </ButtonGroup>
             </Grid>
             <Grid container gap="10px">
               <TitleTypography variant="h2">مشخصات:</TitleTypography>

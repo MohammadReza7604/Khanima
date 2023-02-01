@@ -26,7 +26,7 @@ const theme = createTheme({
     MuiInputLabel: {
       styleOverrides: {
         root: {
-          fontFamily: "yekan",
+          fontFamily: "IRANSans",
           color: "white",
         },
       },
@@ -34,7 +34,7 @@ const theme = createTheme({
     MuiFormControlLabel: {
       styleOverrides: {
         root: {
-          fontFamily: "yekan",
+          fontFamily: "IRANSans",
           color: "white",
         },
       },
@@ -49,7 +49,7 @@ const theme = createTheme({
     MuiTypography: {
       styleOverrides: {
         root: {
-          fontFamily: "yekan",
+          fontFamily: "IRANSans",
           color: "white",
         },
       },
@@ -57,24 +57,26 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          fontFamily: "yekan",
+          fontFamily: "IRANSans",
         },
       },
     },
     MuiButtonBase: {
       styleOverrides: {
         root: {
-          fontFamily: "yekan",
+          fontFamily: "IRANSans",
           fontSize: "14px",
           color: "#00A693",
           fontWeight: 400,
+          borderColor:"white"
+
         },
       },
     },
     MuiTab: {
       styleOverrides: {
         root: {
-          fontFamily: "yekan",
+          fontFamily: "IRANSans",
           fontSize: "22px",
           fontWeight: 600,
         },
@@ -88,7 +90,7 @@ const theme = createTheme({
           },
         },
         root: {
-          fontFamily: "yekan",
+          fontFamily: "IRANSans",
           fontSize: "16px",
           fontWeight: 600,
           color: "white",
@@ -98,7 +100,7 @@ const theme = createTheme({
     MuiDialogTitle: {
       styleOverrides: {
         root: {
-          fontFamily: "yekan",
+          fontFamily: "IRANSans",
           fontSize: "18px",
           fontWeight: 700,
           color: "#282828",

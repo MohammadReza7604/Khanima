@@ -7,8 +7,7 @@ import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined
 export const WeblogBox = () => {
   const CustomTypo = styled(Typography)({
     fontWeight: 600,
-    fontSize: "12px",
-    lineHeight: "17px",
+    fontSize: "10px",
     textAlign: "center",
     color: "#282828",
   });
@@ -24,7 +23,7 @@ export const WeblogBox = () => {
         padding: "14px",
       }}
     >
-      <Grid container direction="column" gap="19px">
+      <Grid container direction="column" gap="14px">
         <Image
           width={186}
           height={136}
@@ -42,15 +41,16 @@ export const WeblogBox = () => {
             <CustomTypo>1400/05/23</CustomTypo>
           </Grid>
         </Grid>
-        <Typography variant="h2" fontWeight={700} fontSize="14px" color="black">
+        <Typography variant="h2" fontWeight={700} fontSize="12px" color="black">
           گرامافون قاجاری 200 ساله
         </Typography>
         <Typography
           variant="h2"
           fontWeight={600}
-          fontSize="10px"
+          fontSize="8px"
           textAlign="justify"
           color="black"
+          lineHeight="17px"
         >
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
           استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در

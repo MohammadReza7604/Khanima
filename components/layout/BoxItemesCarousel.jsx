@@ -17,6 +17,9 @@ export const BoxItemsCarousel = (props) => {
     fontSize: "10px",
     fontWeight: 500,
     color: "rgba(40,40,40,0.7)",
+    "&:hover": {
+      color: "black",
+    },
   });
   return (
     <Grid
@@ -94,7 +97,7 @@ export const BoxItemsCarousel = (props) => {
         variant="h4"
         width="128px"
         height="28px"
-        fontSize="12px"
+        fontSize="10px"
         fontWeight={600}
         color="black"
       >
