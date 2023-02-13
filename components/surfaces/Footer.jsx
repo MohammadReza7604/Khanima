@@ -10,6 +10,14 @@ import Image from "next/image";
 import React from "react";
 
 export const Footer = () => {
+  const CustomBox = styled(Box)(({ theme }) => ({
+    height: "100%",
+    backgroundColor: "#1B1B1B",
+    [theme.breakpoints.between("xs", "md")]: {
+      display: "none",
+    },
+  }));
+
   const CustomTypo = styled(Typography)({
     color: "#AEB4BE",
     fontSize: "14px",
@@ -29,12 +37,7 @@ export const Footer = () => {
     fontWeight: 700,
   });
   return (
-    <Box
-      sx={{
-        height: "100%",
-        backgroundColor: "#1B1B1B",
-      }}
-    >
+    <CustomBox>
       <Box
         sx={{
           maxWidth: "1440px",
@@ -92,6 +95,6 @@ export const Footer = () => {
           </Grid>
         </Grid>
       </Box>
-    </Box>
+    </CustomBox>
   );
 };

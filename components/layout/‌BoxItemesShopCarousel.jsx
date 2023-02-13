@@ -7,8 +7,8 @@ import {
   styled,
   Typography,
 } from "@mui/material";
-import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import Image from "next/image";
+import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import LocationOnRoundedIcon from "@mui/icons-material/LocationOnRounded";
 
 export const BoxItemsShopCarousel = () => {

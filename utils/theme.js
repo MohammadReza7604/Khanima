@@ -115,6 +115,23 @@ const theme = createTheme({
         },
       },
     },
+    MuiList:{
+      styleOverrides: {
+        root: {
+          fontFamily: "IRANSans",
+            paddingBottom:"0",
+            paddingTop:"0"
+        },
+      },
+    },
+    MuiMenuItem:{
+      styleOverrides: {
+        root: {
+          fontFamily: "IRANSans",
+          padding:"0"
+        },
+      },
+    }
   },
 });
 export default theme;

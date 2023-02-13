@@ -11,19 +11,27 @@ import {
   MainPageShopCarousel,
   WeblogBoxCarousel,
 } from "../layout/MainPageCarousel";
+import { ButtonMenu } from "../inputs/ButtonMenu";
+import { MainPageMobile } from "../mobile/MainPageMobile";
 
 export const MainPage = () => {
+  const CustomGrid = styled(Grid)(({ theme }) => ({
+    maxWidth: "1440px",
+    margin: "0 auto",
+    padding: "30px 0 40px 0",
+    [theme.breakpoints.between("xs", "md")]:{
+      display:"none"
+    }
+  }));
   const CustomImage = styled(Image)({
     borderRadius: "10px",
   });
   return (
     <>
       <AppBarBanner />
-      <Grid
-        container
-        sx={{ maxWidth: "1440px", margin: "0 auto", padding: "30px 0 40px 0" }}
-      >
-        <Grid container direction="column" gap="64px" width="100%">
+      <MainPageMobile/>
+      <CustomGrid container>
+        <Grid container direction="column" gap="64px" width="1440px">
           <Grid container direction="row" justifyContent="space-between">
             <CustomImage
               width={406}
@@ -259,7 +267,7 @@ export const MainPage = () => {
             <WeblogBoxCarousel />
           </Grid>
         </Grid>
-      </Grid>
+      </CustomGrid>
     </>
   );
 };

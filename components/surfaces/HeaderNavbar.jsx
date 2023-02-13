@@ -1,12 +1,25 @@
 import React, { useState } from "react";
-import { AppBar, Box, Button, Grid, Link, Stack, styled } from "@mui/material";
+import {
+  AppBar,
+  Box,
+  Button,
+  Grid,
+  Link,
+  Menu,
+  MenuItem,
+  Stack,
+  styled,
+  Toolbar,
+} from "@mui/material";
 import BookmarkOutlinedIcon from "@mui/icons-material/BookmarkOutlined";
 import ChatBubbleRoundedIcon from "@mui/icons-material/ChatBubbleRounded";
-import { LinkNavbar, LinkNavbarButton } from "./LinkNavbar";
+import { LinkNavbar } from "./LinkNavbar";
 import { LoginDialog } from "../feedback/LoginDialog";
 import { RegisterDialog } from "../feedback/RegisterDialog";
 import { AuthCodeInput } from "../feedback/AuthCodeInput";
-import { CategorizeMenu } from "../navigation/CategorizeMenu";
+import { ButtonMenu } from "../inputs/ButtonMenu";
+import { UserMenu } from "../inputs/UserMenu";
+import { AppBarMobile } from "../mobile/AppBarMobile";
 
 export const HeaderNavbar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -17,7 +30,23 @@ export const HeaderNavbar = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const NavButtons = styled(Button)({
+  const CustomGrid = styled(Grid)(({ theme }) => ({
+    [theme.breakpoints.between("xs", "md")]: {
+      display: "none",
+    },
+  }));
+
+  const CustomAppBar = styled(AppBar)(({ theme }) => ({
+    height: "72px",
+    justifyContent: "center",
+    backgroundColor: "#1B1B1B",
+    [theme.breakpoints.between("xs", "md")]: {
+      backgroundColor: "inherit",
+      display: "none",
+      height: "34px",
+    },
+  }));
+  const NavButtons = styled(Button)(({ theme }) => ({
     backgroundColor: "#282828",
     color: "#00A693",
     fontSize: "16px",
@@ -25,80 +54,96 @@ export const HeaderNavbar = () => {
     "&:hover": {
       color: "white",
     },
-  });
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "12px",
+      fontWeight: 600,
+    },
+  }));
+  const HeaderRight = styled(Grid)(({ theme }) => ({
+    paddingLeft: "10px",
+    [theme.breakpoints.down("lg")]: {
+      paddingLeft: "10px",
+    },
+    [theme.breakpoints.between("sm", "md")]: {
+      // width:"246px"
+    },
+  }));
+
   return (
-    <AppBar
-      position="fixed"
-      sx={{
-        backgroundColor: "#1B1B1B",
-        height: "72px",
-        justifyContent: "center",
-      }}
-    >
-      <Box sx={{ maxWidth: "1440px", margin: "0 auto" }}>
-        <Grid
-          container
-          direction="row"
-          justifyContent="space-between"
-          alignItems="center"
-          sx={{ width: "1440px" }}
-        >
-          <Stack direction="row" xs={10} gap="30px">
-            <LinkNavbar id="home-navbar" href="/" text="خانه" />
-            <LinkNavbarButton
-              id="categorize-navbar"
-              aria-controls={open ? "categorize-menu" : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? "true" : undefined}
-              text="دسته بندی‌ها"
-              onClick={handleClick}
-            />
-            <LinkNavbar id="map-navbar" href="#" text="نقشه" />
-            <LinkNavbar id="weblog-navbar" href="#" text="وبلاگ" />
-            <LinkNavbar id="group-navbar" href="#" text="گروه‌ها" />
-            <LinkNavbar id="rules-navbar" href="#" text="قوانین" />
-            <LinkNavbar id="proposal-navbar" href="#" text="پیشنهاد به ما" />
-            {/* <CategorizeMenu
-            id="categorize-menu"
-              MenuListProps={{
-                "aria-labelledby": "categorize-navbar",
-              }}
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-            /> */}
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "8px",
-              }}
-            >
-              <BookmarkOutlinedIcon />
-              <LinkNavbar href="/bookmarks" text="علاقمندی" />
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "8px",
-              }}
-            >
-              <ChatBubbleRoundedIcon />
-              <LinkNavbar href="/chat" text="چت" />
-            </Box>
-          </Stack>
-          <Stack direction="row" gap="10px" xs={2}>
-            <NavButtons variant="contained">ثبت آگهی</NavButtons>
-            <NavButtons variant="contained">ورود‌‌‌ /‌ ثبت‌نام</NavButtons>
-          </Stack>
-        </Grid>
-      </Box>
-      <LoginDialog />
-      {/* <RegisterDialog /> */}
-      {/* <AuthCodeInput /> */}
-    </AppBar>
+    <>
+      <AppBarMobile />
+      <CustomAppBar position="fixed">
+        <Box sx={{ width: "100%" }}>
+          <Box
+            sx={{
+              maxWidth: { xl: "1440px", md: "100%", sm: "100%" },
+              margin: "0 auto",
+            }}
+          >
+            <CustomGrid container direction="row">
+              <HeaderRight
+                container
+                direction="row"
+                alignItems="center"
+                gap="20px"
+                lg={8}
+                xl={9}
+                md={9}
+              >
+                <LinkNavbar id="home-navbar" href="/" text="خانه" />
+                <ButtonMenu>دسته بندی ها</ButtonMenu>
+                <LinkNavbar id="map-navbar" href="#" text="نقشه" />
+                <LinkNavbar id="weblog-navbar" href="#" text="وبلاگ" />
+                <LinkNavbar id="group-navbar" href="#" text="گروه‌ها" />
+                <LinkNavbar id="rules-navbar" href="#" text="قوانین" />
+                <LinkNavbar
+                  id="proposal-navbar"
+                  href="#"
+                  text="پیشنهاد به ما"
+                />
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "8px",
+                  }}
+                >
+                  <BookmarkOutlinedIcon />
+                  <LinkNavbar href="/bookmarks" text="علاقمندی" />
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "8px",
+                  }}
+                >
+                  <ChatBubbleRoundedIcon />
+                  <LinkNavbar href="/chat" text="چت" />
+                </Box>
+              </HeaderRight>
+              <Grid container direction="row" lg={3} xl={3} md={3} gap="20px">
+                <NavButtons id="ad-register" variant="contained">
+                  ثبت آگهی
+                </NavButtons>
+                <NavButtons
+                  id="login-register"
+                  variant="contained"
+                  onClick={handleClick}
+                >
+                  ورود‌‌‌ /‌ ثبت‌نام
+                </NavButtons>
+              </Grid>
+            </CustomGrid>
+          </Box>
+        </Box>
+        {/* <LoginDialog /> */}
+        {/* <RegisterDialog /> */}
+        {/* <AuthCodeInput /> */}
+        <UserMenu anchorEl={anchorEl} open={open} onClose={handleClose} />
+      </CustomAppBar>
+    </>
   );
 };
