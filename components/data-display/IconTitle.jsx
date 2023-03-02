@@ -1,22 +1,37 @@
 import React from "react";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, styled, Typography } from "@mui/material";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 
 export const IconTitle = (props) => {
+  const Title=styled(Typography)(({theme})=>({
+    [theme.breakpoints.between('xs','md')]:{
+      fontSize:"10px"
+    }
+  }))
+  const Wrapper=styled(Grid)(({theme})=>({
+    [theme.breakpoints.between('xs','md')]:{
+      width:"fit-content"
+    }
+  }))
   return (
-    <Grid container direction="row" gap="5px" justifyContent="flex-end">
-      <Typography sx={{ direction: `${props.dir}`, ...props.style }}>
+    <Wrapper container direction="row" gap="5px" justifyContent="flex-end">
+      <Title sx={{ direction: `${props.dir}`, ...props.style }}>
         {props.title}
-      </Typography>
+      </Title>
       <Box>{props.icon}</Box>
-    </Grid>
+    </Wrapper>
   );
 };
 export const IconTitleGlobal = (props) => {
+  const Text = styled(Typography)(({ theme }) => ({
+    [theme.breakpoints.between("xs", "md")]: {
+      fontSize: "8px",
+    },
+  }));
   return (
-    <Grid container direction="row" gap="5px" width="auto">
-      <Box>{props.icon}</Box>
-      <Typography sx={{ ...props.style }}>{props.title}</Typography>
+    <Grid container direction="row" gap="5px" alignItems="center" width="auto"sx={{...props.sx}}>
+      <Box sx={{ ...props.styleBox }}>{props.icon}</Box>
+      <Text sx={{ ...props.style }}>{props.title}</Text>
     </Grid>
   );
 };
@@ -24,9 +39,9 @@ export const IconTitle2 = (props) => {
   return (
     <Grid container direction="row" gap="5px" justifyContent="flex-start">
       <Box>
-        <AssignmentIcon />
+        <AssignmentIcon sx={{ ...props.styleIcon }} />
       </Box>
-      <Typography>{props.title}</Typography>
+      <Typography sx={{ ...props.styleText }}>{props.title}</Typography>
     </Grid>
   );
 };

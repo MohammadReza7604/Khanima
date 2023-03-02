@@ -1,10 +1,19 @@
 import React from "react";
-import { Box, Button, Divider, Grid, styled, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Divider,
+  Grid,
+  IconButton,
+  styled,
+  Typography,
+} from "@mui/material";
 import Image from "next/image";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ThumbDownAltIcon from "@mui/icons-material/ThumbDownAlt";
 import ShareIcon from "@mui/icons-material/Share";
 import ReportIcon from "@mui/icons-material/Report";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 export const CommentBox = (props) => {
   const CustomButton = styled(Button)({
@@ -95,6 +104,69 @@ export const CommentBox = (props) => {
             lineHeight="190%"
             color="#282828"
             textAlign="justify"
+          >
+            {props.commentText}
+          </Typography>
+        </Grid>
+      </Grid>
+    </Grid>
+  );
+};
+
+export const CommentBoxMobile = (props) => {
+  return (
+    <Grid
+      container
+      bgcolor="white"
+      width="100%"
+      height="80px"
+      borderRadius="5px"
+      direction="row"
+      position="relative"
+    >
+      <IconButton sx={{ position: "absolute", top: 0, right: 0,"&:hover":{backgroundColor:"white"} }}>
+        <MoreVertIcon />
+      </IconButton>
+      <Grid container direction="row">
+        <Grid container justifyContent="center" alignItems="center" xs={3}>
+          <Image
+            src={props.src}
+            alt="picture"
+            width="56"
+            height="60"
+            style={{ borderRadius: "5px" }}
+          />
+        </Grid>
+        <Grid
+          container
+          direction="column"
+          gap="5px"
+          justifyContent="center"
+          xs={9}
+        >
+          <Typography
+            variant="caption"
+            fontSize="10px"
+            fontWeight={700}
+            color="black"
+          >
+            {props.username}
+          </Typography>
+          <Typography
+            variant="caption"
+            fontSize="8px"
+            fontWeight={500}
+            color="#282828"
+          >
+            {props.time}
+          </Typography>
+          <Typography
+            fontSize="8px"
+            fontWeight={700}
+            lineHeight="190%"
+            color="black"
+            textAlign="justify"
+            paddingRight="8px"
           >
             {props.commentText}
           </Typography>

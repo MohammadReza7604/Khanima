@@ -6,6 +6,7 @@ import { ExpertsBox } from "../surfaces/ExpertsBox";
 import styled from "styled-components";
 import { BoxItemsShopCarousel } from "./‌BoxItemesShopCarousel";
 import { WeblogBox } from "../surfaces/WeblogBox";
+import { PhotoAddBox } from "../surfaces/PhotoAddBox";
 
 export const MainPageCarousel = () => {
   const [sliderRef] = useKeenSlider({
@@ -292,5 +293,40 @@ export const WeblogSingletBoxCarousel = () => {
         <WeblogBox />
       </div>
     </Test>
+  );
+};
+
+export const AddAdCarousel = () => {
+  const [sliderRef] = useKeenSlider({
+    loop: true,
+    mode: "free",
+    rtl: true,
+    slides: {
+      perView: 2.3,
+      spacing: 10,
+    },
+  });
+
+  return (
+    <div ref={sliderRef} className="keen-slider">
+      <div className="keen-slider__slide">
+        <PhotoAddBox />
+      </div>
+      <div className="keen-slider__slide">
+        <PhotoAddBox />
+      </div>
+      <div className="keen-slider__slide">
+        <PhotoAddBox />
+      </div>
+      <div className="keen-slider__slide">
+        <PhotoAddBox />
+      </div>
+      <div className="keen-slider__slide">
+        <PhotoAddBox />
+      </div>
+      <div className="keen-slider__slide">
+        <PhotoAddBox />
+      </div>
+    </div>
   );
 };

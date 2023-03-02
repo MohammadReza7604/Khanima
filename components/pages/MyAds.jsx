@@ -1,11 +1,36 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, styled, Typography } from "@mui/material";
 import React from "react";
-import { ModelListCardAdsPage } from "../surfaces/ModelListCardAdsPage";
 import { MyAdsBox } from "../surfaces/MyAdsBox";
 
 export const MyAds = () => {
+  const Wrapper = styled(Grid)(({ theme }) => ({
+    maxWidth: "1440px",
+    margin: "0 auto",
+    padding: "30px 0 40px 0",
+    gap: "30px",
+    [theme.breakpoints.between("xs", "md")]: {
+      background: "url(/images/back-mobile.png)",
+    },
+  }));
+  const CustomGrid = styled(Grid)(({ theme }) => ({
+    marginTop: "100px",
+    alignItems: "center",
+    gap: "50px",
+    [theme.breakpoints.between("xs", "md")]: {
+      alignItems: "flex-start",
+      padding: " 0 10px",
+      marginTop: "80px",
+    },
+  }));
+  const Title = styled(Typography)(({ theme }) => ({
+    fontSize: "24px",
+    fontWeight: 700,
+    [theme.breakpoints.between("xs", "md")]: {
+      fontSize: "14px",
+    },
+  }));
   return (
-    <Grid
+    <Wrapper
       container
       sx={{
         maxWidth: "1440px",
@@ -14,21 +39,13 @@ export const MyAds = () => {
         gap: "30px",
       }}
     >
-      <Grid
-        container
-        marginTop="100px"
-        justifyContent="center"
-        direction="column"
-        gap="50px"
-      >
-        <Typography variant="h1" fontSize="24px" fontWeight={700}>
-          آگهی‌های من
-        </Typography>
+      <CustomGrid container direction="column">
+        <Title variant="h1">آگهی‌های من</Title>
         <MyAdsBox />
         <MyAdsBox />
         <MyAdsBox />
         <MyAdsBox />
-      </Grid>
-    </Grid>
+      </CustomGrid>
+    </Wrapper>
   );
 };

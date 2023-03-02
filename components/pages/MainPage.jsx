@@ -12,7 +12,7 @@ import {
   WeblogBoxCarousel,
 } from "../layout/MainPageCarousel";
 import { ButtonMenu } from "../inputs/ButtonMenu";
-import { MainPageMobile } from "../mobile/MainPageMobile";
+import { MainPageMobile } from "./mobile/MainPageMobile";
 
 export const MainPage = () => {
   const CustomGrid = styled(Grid)(({ theme }) => ({

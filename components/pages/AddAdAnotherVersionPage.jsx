@@ -12,9 +12,36 @@ import {
   Typography,
 } from "@mui/material";
 import { PhotoAddBox } from "../surfaces/PhotoAddBox";
+import { AddAdAnotherVersionMobile } from "./mobile/AddAdAnotherVersionMobile";
 
 export const AddAdAnotherVersionPage = () => {
-  const CustomTextField = styled(TextField)({
+  const CustomBox = styled(Box)(({ theme }) => ({
+    maxWidth: "1440px",
+    margin: "0 auto",
+    padding: "30px 0 40px 0",
+  }));
+  const HeaderTitle = styled(Typography)(({ theme }) => ({
+    fontSize: "28px",
+    fontWeight: 700,
+    [theme.breakpoints.between("xs", "md")]: {
+      display: "none",
+    },
+  }));
+  const CustomFormControl = styled(FormControl)(({ theme }) => ({
+    width: "418px",
+    height: "45px",
+    [theme.breakpoints.between("xs", "md")]: {
+      width: "242px",
+      height: "26px",
+    },
+  }));
+  const CustomGrid = styled(Grid)(({ theme }) => ({
+    direction:"row", margin:"100px 0",
+    [theme.breakpoints.between("xs", "md")]: {
+      display:"none"
+    },
+  }));
+  const CustomTextField = styled(TextField)(({ theme }) => ({
     "& label.Mui-focused": {
       color: "white",
     },
@@ -31,8 +58,11 @@ export const AddAdAnotherVersionPage = () => {
       "&.Mui-focused fieldset": {
         borderColor: "white",
       },
+      "& .MuiSelect-icon": {
+        color: "white",
+      },
     },
-  });
+  }));
   const Title = styled(Typography)({
     color: "#00A693",
     fontSize: "14px",
@@ -49,44 +79,28 @@ export const AddAdAnotherVersionPage = () => {
   const handleChange = (event) => {
     setCategory(event.target.value);
   };
-  const CustomGrid = styled(Grid)({
-    flexDirection: "row",
-    gap: "8px",
-  });
 
   return (
-    <Box
-      sx={{ maxWidth: "1440px", margin: "0 auto", padding: "30px 0 40px 0" }}
-    >
+    <>
+    <AddAdAnotherVersionMobile/>
+    <CustomBox>
       <Box margin="100px 0 0 0" textAlign="center">
-        <Typography variant="h3" fontSize="28px" fontWeight={700}>
-          ثبت آگهی
-        </Typography>
+        <HeaderTitle variant="h3">ثبت آگهی</HeaderTitle>
       </Box>
-      <Grid container direction="row" margin="100px 0">
+      <CustomGrid container >
         <Grid container direction="column" gap="40px" xs={6}>
-          <FormControl sx={{ width: "418px", height: "45px" }}>
-            <InputLabel id="demo-simple-select-label">دسته‌بندی</InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={category}
+          <CustomFormControl>
+            <CustomTextField
+              id="outlined-select-currency"
+              select
+              variant="outlined"
               label="دسته‌بندی"
+              // value={currency}
               onChange={handleChange}
-              color="secondary"
-              sx={{
-                borderRadius: "7px",
-                border: "1px solid white",
-                "& .MuiSelect-icon": {
-                  color: "white",
-                },
-              }}
             >
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
-            </Select>
-          </FormControl>
+              {/* <CategoryMenuAppBar /> */}
+            </CustomTextField>
+          </CustomFormControl>
           <CustomTextField
             id="ad-title"
             label="عنوان آگهی"
@@ -149,7 +163,8 @@ export const AddAdAnotherVersionPage = () => {
             </Button>
           </Grid>
         </Grid>
-      </Grid>
-    </Box>
+      </CustomGrid>
+    </CustomBox>
+    </>
   );
 };

@@ -1,11 +1,11 @@
 import { Grid, Link, styled, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
-import { CustomBox } from "../layout/CustomBox";
-import { WeblogBoxCarouselMobile } from "../layout/mobile/MainPageCarouselMobile";
-import { CardGoodsItems } from "../surfaces/mobile/CardGoodsItems";
-import { ItemCard } from "../surfaces/mobile/ItemCard";
-import { VectorBoxMobile } from "../surfaces/VectorBox";
+import { CustomBox } from "../../layout/CustomBox";
+import { WeblogBoxCarouselMobile } from "../../layout/mobile/MainPageCarouselMobile";
+import { CardGoodsItems } from "../../surfaces/mobile/CardGoodsItems";
+import { ItemCard } from "../../surfaces/mobile/ItemCard";
+import { VectorBoxMobile } from "../../surfaces/VectorBox";
 
 export const MainPageMobile = () => {
   const CustomGrid = styled(Grid)(({ theme }) => ({
@@ -20,9 +20,6 @@ export const MainPageMobile = () => {
     marginTop: "100px",
     padding: "30px",
     gap: "24px",
-    [theme.breakpoints.only("xs")]: {
-      // padding: "50px",
-    },
   }));
   return (
     <CustomGrid container>
@@ -37,23 +34,25 @@ export const MainPageMobile = () => {
         <VectorBoxMobile />
         <ItemCard />
         <CardGoodsItems />
-      <Typography
-        fontSize="14px"
-        fontWeight={700}
-        textAlign="center"
-        width="1440px"
-      >
-        وبلاگ
-      </Typography>
-      <Grid
-        container
-        width="100vw"
-        alignItems="flex-start"
-        gap="40px"
-        direction="column"
-      >
-        <WeblogBoxCarouselMobile />
-      </Grid>
+        <Grid container justifyContent="center" gap="20px">
+          <Typography
+            fontSize="14px"
+            fontWeight={700}
+            textAlign="center"
+            width="1440px"
+          >
+            وبلاگ
+          </Typography>
+          <Grid
+            container
+            width="100vw"
+            alignItems="flex-start"
+            gap="40px"
+            direction="column"
+          >
+            <WeblogBoxCarouselMobile />
+          </Grid>
+        </Grid>
       </CustomGridWarper>
     </CustomGrid>
   );

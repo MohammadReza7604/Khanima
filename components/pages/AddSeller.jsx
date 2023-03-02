@@ -3,13 +3,13 @@ import {
   Box,
   Button,
   Grid,
-  InputBase,
   styled,
   TextField,
   Typography,
 } from "@mui/material";
 import { PhotoAddBox } from "../surfaces/PhotoAddBox";
 import AddIcon from "@mui/icons-material/Add";
+import { AddSellerMobile } from "./mobile/AddSellerMobile";
 
 export const AddSeller = () => {
   const CustomTextField = styled(TextField)({
@@ -33,22 +33,26 @@ export const AddSeller = () => {
       },
     },
   });
+  const Wrapper = styled(Grid)(({ theme }) => ({
+    maxWidth: "1440px",
+    margin: "0 auto",
+    padding: "40px 0 40px 0",
+    [theme.breakpoints.between("xs", "md")]: {
+      background: "url(/images/back-mobile.png)",
+    },
+  }));
+  const CustomGrid = styled(Grid)(({ theme }) => ({
+    marginTop: "100px",
+    alignItems: "center",
+    justifyContent: "center",
+    [theme.breakpoints.between("xs", "md")]: {
+      display: "none",
+    },
+  }));
   return (
-    <Grid
-      container
-      sx={{
-        maxWidth: "1440px",
-        margin: "0 auto",
-        padding: "40px 0 40px 0",
-      }}
-    >
-      <Grid
-        container
-        marginTop="100px"
-        direction="row"
-        alignItems="center"
-        justifyContent="center"
-      >
+    <Wrapper container>
+      <AddSellerMobile />
+      <CustomGrid container direction="row">
         <Grid
           container
           gap="38px"
@@ -207,7 +211,7 @@ export const AddSeller = () => {
             </Grid>
           </Grid>
         </Grid>
-      </Grid>
-    </Grid>
+      </CustomGrid>
+    </Wrapper>
   );
 };

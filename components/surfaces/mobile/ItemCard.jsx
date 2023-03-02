@@ -91,8 +91,8 @@ export const ItemCard = () => {
             <Grid container justifyContent="flex-end" xs={4}>
               <IconButton
                 sx={{
-                  width: "4px",
-                  height: "4px",
+                  width: "3px",
+                  height: "3px",
                   position: "absolute",
                   top: "14px",
                   right: "80px",
@@ -100,7 +100,7 @@ export const ItemCard = () => {
                 }}
               >
                 <BookmarkBorderIcon
-                  sx={{ width: "14px", height: "14px", color: "black" }}
+                  sx={{ width: "12px", height: "12px", color: "black" }}
                 />
               </IconButton>
               <Box>
@@ -217,8 +217,8 @@ export const ItemCard = () => {
             <Grid container justifyContent="flex-end" xs={4}>
               <IconButton
                 sx={{
-                  width: "4px",
-                  height: "4px",
+                  width: "3px",
+                  height: "3px",
                   position: "absolute",
                   top: "14px",
                   right: "80px",
@@ -226,7 +226,7 @@ export const ItemCard = () => {
                 }}
               >
                 <BookmarkBorderIcon
-                  sx={{ width: "14px", height: "14px", color: "black" }}
+                  sx={{ width: "12px", height: "12px", color: "black" }}
                 />
               </IconButton>
               <Box>

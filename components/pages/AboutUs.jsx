@@ -1,28 +1,54 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, styled, Typography } from "@mui/material";
 import React from "react";
 
 export const AboutUs = () => {
+  const Title = styled(Typography)(({ theme }) => ({
+    fontSize: "24px",
+    fontWeigh: 700,
+    [theme.breakpoints.between("xs", "md")]: {
+      fontSize: "14px",
+      fontWeigh: 700,
+      color: "#00A693",
+      alignSelf: "start",
+      padding: "20px 0 0 20px",
+    },
+  }));
+  const CustomGrid = styled(Grid)(({ theme }) => ({
+    margin: "100px 0 20px 0",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "50px",
+    padding: "10px",
+    [theme.breakpoints.between("xs", "md")]: {
+      justifyContent: "unset",
+      background: "url(/images/back-mobile.png)",
+      margin: "50px 0 20px 0",
+      gap: "20px",
+    },
+  }));
+  const Description = styled(Typography)(({ theme }) => ({
+    fontSize: "16px",
+    fontWeight: 600,
+    width: "1260px",
+    height: "auto",
+    textAlign: "justify",
+    lineHeight: "230%",
+    [theme.breakpoints.between("md", "lg")]: {
+      fontSize: "14px",
+      width: "100%",
+      padding: "0 20px 50px 20px",
+    },
+    [theme.breakpoints.between("xs", "md")]: {
+      width: "100%",
+      padding: "0 20px 50px 20px",
+      fontSize: "10px",
+      lineHeight: "220%",
+    },
+  }));
   return (
-    <Grid
-      container
-      margin="100px 0 20px 0"
-      direction="column"
-      justifyContent="center"
-      alignItems="center"
-      gap="50px"
-      padding="10px"
-    >
-      <Typography fontSize="24px" fontWeight={700}>
-        درباره ما
-      </Typography>
-      <Typography
-        fontSize="16px"
-        fontWeight={600}
-        width="1260px"
-        height="auto"
-        textAlign="justify"
-        lineHeight="230%"
-      >
+    <CustomGrid container direction="column">
+      <Title>درباره ما</Title>
+      <Description>
         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده
         از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و
         سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای
@@ -54,7 +80,7 @@ export const AboutUs = () => {
         داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان
         رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات
         پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-      </Typography>
-    </Grid>
+      </Description>
+    </CustomGrid>
   );
 };

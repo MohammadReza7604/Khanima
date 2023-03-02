@@ -13,6 +13,7 @@ import {
   SupportPageItem,
   SupportPageItemFooter,
 } from "../layout/SupportPageItem";
+import { SupportMobile } from "./mobile/SupportMobile";
 
 export const Support = () => {
   const CustomTextField = styled(TextField)({
@@ -36,20 +37,31 @@ export const Support = () => {
       },
     },
   });
+  const CustomGrid = styled(Grid)(({ theme }) => ({
+    marginTop: "100px",
+    direction: "column",
+    gap: "50px",
+    [theme.breakpoints.between("xs", "md")]: {
+      display: "none",
+      background: "url(/images/back-mobile.png)",
+    },
+  }));
+  const Wrapper = styled(Grid)(({ theme }) => ({
+    maxWidth: "1440px",
+    margin: "0 auto",
+    padding: "30px 0 40px 0",
+    [theme.breakpoints.between("xs", "md")]: {
+      background: "url(/images/back-mobile.png)",
+    },
+  }));
   const CustomText = styled(Typography)({
     fontSize: "16px",
     fontWeight: 700,
   });
   return (
-    <Grid
-      container
-      sx={{
-        maxWidth: "1440px",
-        margin: "0 auto",
-        padding: "30px 0 40px 0",
-      }}
-    >
-      <Grid container marginTop="100px" direction="column" gap="50px">
+    <Wrapper container>
+      <SupportMobile />
+      <CustomGrid container>
         <Grid container gap="40px" direction="column" alignItems="center">
           <Typography
             variant="h1"
@@ -114,7 +126,7 @@ export const Support = () => {
           <SupportPageItem xs={3.5} />
           <SupportPageItem xs={3.5} />
         </Grid>
-        <Divider sx={{ borderColor: "white" }} />
+        <Divider sx={{ width: "100%", borderColor: "white" }} />
         <Grid container direction="row" justifyContent="space-between">
           <SupportPageItemFooter
             xs={3.5}
@@ -138,7 +150,7 @@ export const Support = () => {
             link="ثبت انتقاد و پیشنهاد"
           />
         </Grid>
-      </Grid>
-    </Grid>
+      </CustomGrid>
+    </Wrapper>
   );
 };

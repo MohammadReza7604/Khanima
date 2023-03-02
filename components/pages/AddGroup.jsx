@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import { PhotoAddBox } from "../surfaces/PhotoAddBox";
+import { AddGroupMobile } from "./mobile/AddGroupMobile";
 
 export const AddGroup = () => {
   const CustomTextField = styled(TextField)({
@@ -48,11 +49,18 @@ export const AddGroup = () => {
     textAlign: "justify",
     lineHeight: "198%",
   });
+  const Wrapper = styled(Grid)(({ theme }) => ({
+    maxWidth: "1440px",
+    margin: "0 auto",
+    padding: "30px 0 40px 0",
+    [theme.breakpoints.between("xs", "md")]: {
+      display: "none",
+    },
+  }));
   return (
-    <Grid
-      container
-      sx={{ maxWidth: "1440px", margin: "0 auto", padding: "30px 0 40px 0" }}
-    >
+    <>
+    <AddGroupMobile/>
+    <Wrapper container>
       <Grid container direction="row" marginTop="120px">
         <Grid container direction="column" gap="50px" xs={6}>
           <Grid container gap="30px">
@@ -164,6 +172,7 @@ export const AddGroup = () => {
           </Grid>
         </Grid>
       </Grid>
-    </Grid>
+    </Wrapper>
+    </>
   );
 };

@@ -139,7 +139,7 @@ export const HeaderNavbar = () => {
             </CustomGrid>
           </Box>
         </Box>
-        {/* <LoginDialog /> */}
+        <LoginDialog />
         {/* <RegisterDialog /> */}
         {/* <AuthCodeInput /> */}
         <UserMenu anchorEl={anchorEl} open={open} onClose={handleClose} />

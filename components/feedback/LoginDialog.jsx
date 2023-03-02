@@ -8,6 +8,8 @@ import {
   Grid,
   IconButton,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import React, { useState } from "react";
 import { PhoneNumber } from "../inputs/PhoneNumber";
@@ -15,6 +17,8 @@ import CloseIcon from "@mui/icons-material/Close";
 
 export const LoginDialog = () => {
   const [open, setOpen] = useState(true);
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -24,14 +28,15 @@ export const LoginDialog = () => {
     setOpen(false);
   };
   return (
-    <Grid>
+    <Grid container>
+      <Typography variant="h3S">Khanima</Typography>
       <Dialog
         open={open}
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
-        maxWidth={"sm"}
-        fullWidth
+        maxWidth={"xl"}
+        fullWidth={fullScreen}
         PaperProps={{
           sx: { width: "21%", height: "30%", borderRadius: "15px" },
         }}

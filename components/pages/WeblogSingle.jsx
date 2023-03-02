@@ -1,26 +1,51 @@
-import { Button, Divider, Grid, Typography } from "@mui/material";
+import { Button, Divider, Grid, styled, Typography } from "@mui/material";
 import React from "react";
 import { IconTitleGlobal } from "../data-display/IconTitle";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import Image from "next/image";
 import ShareRoundedIcon from "@mui/icons-material/ShareRounded";
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
-import {
-  ExpertBoxCarousel,
-  WeblogSingletBoxCarousel,
-} from "../layout/MainPageCarousel";
+import { WeblogSingletBoxCarousel } from "../layout/MainPageCarousel";
+import { WeblogSingleMobile } from "./mobile/WeblogSingleMobile";
 
 export const WeblogSingle = () => {
+  const Wrapper = styled(Grid)(({ theme }) => ({
+    maxWidth: "1440px",
+    margin: "0 auto",
+    padding: "30px 0 40px 0",
+    [theme.breakpoints.between("xs", "md")]: {
+      background: "url(/images/back-mobile.png)",
+      padding: "30px 20px",
+    },
+  }));
+  const CustomGrid = styled(Grid)(({ theme }) => ({
+    
+    [theme.breakpoints.between("xs", "md")]: {
+      display:"none"
+    },
+  }));
+  const Title = styled(Typography)(({ theme }) => ({
+    fontSize: "24px",
+    fontWeight: 700,
+    color:"white",
+  }));
+  const Description = styled(Typography)(({ theme }) => ({ 
+    width: "896px",
+    height: "332px",
+    textAlign: "justify",
+    fontSize: "14px",
+    fontWeight: 500,
+    lineHeight: "230%",
+    marginBottom:"20px",
+   }));
   return (
-    <Grid
-      container
-      sx={{ maxWidth: "1440px", margin: "0 auto", padding: "30px 0 40px 0" }}
-    >
+    <Wrapper container>
       <Grid container direction="row" marginTop="100px">
-        <Grid container direction="column" gap="40px">
-          <Typography variant="h1" fontSize="24px" fontWeight={700}>
+      <WeblogSingleMobile/>
+        <CustomGrid container direction="column" gap="40px">
+          <Title variant="h1">
             مهمترین خواص انگشتر عقیق و انگشتر فیروزه که نمی‌دانستید
-          </Typography>
+          </Title>
           <Grid container direction="row" gap="40px">
             <IconTitleGlobal
               title="دانستنی، وبلاگ"
@@ -196,15 +221,7 @@ export const WeblogSingle = () => {
               />
             </Grid>
           </Grid>
-          <Typography
-            sx={{
-              width: "896px",
-              height: "332px",
-              textAlign: "justify",
-              fontSize: "14px",
-              fontWeight: 500,
-              lineHeight: "230%",
-            }}
+          <Description
           >
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
             استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
@@ -228,7 +245,7 @@ export const WeblogSingle = () => {
             راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل
             حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود
             طراحی اساسا مورد استفاده قرار گیرد.
-          </Typography>
+          </Description>
           <Grid
             container
             direction="row"
@@ -248,7 +265,7 @@ export const WeblogSingle = () => {
               sx={{
                 width: "180px",
                 color: "white",
-                fontSize: "16px",
+                fontSize: "14px",
                 fontWeight: 600,
               }}
             >
@@ -272,8 +289,8 @@ export const WeblogSingle = () => {
           >
             <WeblogSingletBoxCarousel />
           </Grid>
-        </Grid>
+        </CustomGrid>
       </Grid>
-    </Grid>
+    </Wrapper>
   );
 };

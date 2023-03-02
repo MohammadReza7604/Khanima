@@ -131,6 +131,14 @@ const theme = createTheme({
           padding:"0"
         },
       },
+    },
+    MuiAccordion:{
+      styleOverrides: {
+        root: {
+          fontFamily: "IRANSans",
+         backgroundColor:"inherit"
+        },
+      },
     }
   },
 });

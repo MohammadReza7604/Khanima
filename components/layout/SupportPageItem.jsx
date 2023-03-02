@@ -3,12 +3,30 @@ import React from "react";
 import { CustomLi } from "../inputs/CustomLi";
 
 export const SupportPageItem = (props) => {
-  const CustomTypography = styled(Typography)({
+  const CustomTypography = styled(Typography)(({ theme }) => ({
     fontSize: "14px",
     fontWeight: 600,
-  });
+    [theme.breakpoints.between("xs", "md")]: {
+      fontSize: "10px",
+      fontWeight: 500,
+    },
+  }));
+  const CustomLink = styled(Link)(({ theme }) => ({
+    fontWeight: 700,
+    fontSize: "14px",
+    [theme.breakpoints.between("xs", "md")]: {
+      fontSize: "10px",
+      fontWeight: 500,
+    },
+  }));
+  const CustomGrid = styled(Grid)(({ theme }) => ({
+    gap: "26px",
+    [theme.breakpoints.between("xs", "md")]: {
+      gap: "14px",
+    },
+  }));
   return (
-    <Grid container direction="column" gap="26px" xs={props.xs}>
+    <CustomGrid container direction="column" xs={props.xs}>
       <CustomLi fontSize="16px">ورود حساب کاربری</CustomLi>
       <CustomTypography>چگونه در خانیما حساب کاربری بسازم؟</CustomTypography>
       <CustomTypography>چگونه اپلیکیشن دیوار را دانلود کنم؟</CustomTypography>
@@ -17,34 +35,53 @@ export const SupportPageItem = (props) => {
       </CustomTypography>
       <CustomTypography>چگونه وارد حساب خود شوم؟</CustomTypography>
       <CustomTypography>چگونه از حساب کاربری خود خارج شوم؟</CustomTypography>
-      <Link href="#" underline="none" fontWeight={700} fontSize="14px">
+      <CustomLink href="#" underline="none">
         موارد بیشتر
-      </Link>
-    </Grid>
+      </CustomLink>
+    </CustomGrid>
   );
 };
+
 export const SupportPageItemFooter = (props) => {
-  const CustomTypography = styled(Typography)({
+  const Title = styled(Typography)(({ theme }) => ({
+    fontSize: "16px",
+    fontWeight: 700,
+    [theme.breakpoints.between("xs", "md")]: {
+      fontSize: "12px",
+    },
+  }));
+  const Description = styled(Typography)(({ theme }) => ({
+    fontSize: "12px",
+    fontWeight: 400,
+    width: "302px",
+    height: "auto",
+    textAlign: "justify",
+    [theme.breakpoints.between("xs", "md")]: {
+      fontSize: "10px",
+      width: "100%",
+    },
+  }));
+  const CustomGrid = styled(Grid)(({ theme }) => ({
+    gap: "26px",
+    [theme.breakpoints.between("xs", "md")]: {
+      gap: "10px",
+    },
+  }));
+  const CustomLink = styled(Link)(({ theme }) => ({
+    fontWeight: 700,
     fontSize: "14px",
-    fontWeight: 600,
-  });
+    [theme.breakpoints.between("xs", "md")]: {
+      fontSize: "8px",
+    },
+  }));
+
   return (
-    <Grid container direction="column" gap="26px" xs={props.xs}>
-      <Typography fontSize="16px" fontWeight={700}>
-        {props.title}
-      </Typography>
-      <Typography
-        fontSize="12px"
-        fontWeight={400}
-        width="302px"
-        height="auto"
-        textAlign="justify"
-      >
-        {props.text}
-      </Typography>
-      <Link href="#" underline="none" fontWeight={700} fontSize="14px">
+    <CustomGrid container direction="column" xs={props.xs}>
+      <Title>{props.title}</Title>
+      <Description>{props.text}</Description>
+      <CustomLink href="#" underline="none">
         {props.link}
-      </Link>
-    </Grid>
+      </CustomLink>
+    </CustomGrid>
   );
 };

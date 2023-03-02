@@ -40,6 +40,7 @@ export const BoxItemsCarousel = (props) => {
           position: "absolute",
           top: "14px",
           left: "14px",
+          zIndex:2
         }}
       >
         <BookmarkBorderIcon
@@ -128,6 +129,92 @@ export const BoxItemsCarousel = (props) => {
           width: "100%",
           height: "30px",
           fontSize: "12px",
+          fontWeight: 500,
+          textAlign: "center",
+        }}
+      >
+        مشاهده بیشتر
+      </Button>
+    </Grid>
+  );
+};
+
+export const BoxItemsCarouselMobile = (props) => {
+  const Text = styled(Typography)({
+    fontSize: "10px",
+    fontWeight: 500,
+    color: "rgba(40,40,40,0.7)",
+    "&:hover": {
+      color: "black",
+    },
+  });
+  return (
+    <Grid
+      container
+      width="140px"
+      height="202px"
+      boxShadow="7px 4px 40px rgba(0, 0, 0, 0.15)"
+      bgcolor="white"
+      borderRadius="5px"
+      padding="8px"
+      position="relative"
+      // gap="10px"
+    >
+      <IconButton
+        sx={{
+          width: "14px",
+          height: "14px",
+          position: "absolute",
+          top: "2px",
+          left: "6px",
+          zIndex:2
+        }}
+      >
+        <BookmarkBorderIcon
+          sx={{ width: "14px", height: "14px", color: "black" }}
+        />
+      </IconButton>
+      <Box>
+        <Image
+          width="122"
+          height="90"
+          src="/images/laptop.png"
+          alt="laptop-image-box"
+        />
+      </Box>
+
+      <Typography
+        variant="h4"
+        width="120px"
+        height="26px"
+        fontSize="9px"
+        fontWeight={600}
+        color="black"
+      >
+        گرامافون قاجاری 200 ساله قاجاری اصل ناصرالدین شاه
+      </Typography>
+      <Grid container Direction="row" gap="4px">
+        <SellIcon
+          sx={{
+            color: "#FFC700",
+            width: "10px",
+            height: "10px",
+            transform: "rotate(80deg)",
+          }}
+        />
+        <Typography
+          sx={{ fontSize: "8px", fontWeight: 500, color: "#282828" }}
+        >
+          1,200,000 تومان
+        </Typography>
+      </Grid>
+      <Button
+        variant="contained"
+        size="small"
+        sx={{
+          width: "100%",
+          height: "20px",
+          fontSize: "10px",
           fontWeight: 500,
           textAlign: "center",
         }}

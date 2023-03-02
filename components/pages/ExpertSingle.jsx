@@ -122,7 +122,7 @@ export const ExpertSingle = () => {
             </Grid>
             <Box xs={6}>
               <Typography fontSize="14px" fontWeight={700} dir="ltr">
-                @MortezaSh{" "}
+                @MortezaSh 
               </Typography>
             </Box>
           </Grid>
